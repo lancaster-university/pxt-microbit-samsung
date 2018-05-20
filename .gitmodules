@@ -1,0 +1,3 @@
+[submodule "libs/weather"]
+	path = libs/weather
+	url = https://github.com/lancaster-university/samsung-weather.git

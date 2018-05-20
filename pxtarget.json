@@ -9,7 +9,8 @@
         "libs/core",
         "libs/radio",
         "libs/devices",
-        "libs/bluetooth"
+        "libs/bluetooth",
+        "libs/weather"
     ],
     "cloud": {
         "workspace": false,
@@ -201,7 +202,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.0.0-rc11",
+        "gittag": "rest-radio",
         "serviceId": "microbit"
     },
     "serial": {
