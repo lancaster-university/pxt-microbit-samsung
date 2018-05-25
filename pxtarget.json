@@ -10,7 +10,8 @@
         "libs/radio",
         "libs/devices",
         "libs/bluetooth",
-        "libs/weather"
+        "libs/weather",
+        "libs/cloud-variables"
     ],
     "cloud": {
         "workspace": false,
