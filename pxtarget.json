@@ -27,7 +27,7 @@
         "isNative": false,
         "hasHex": true,
         "deployDrives": "(MICROBIT|MBED)",
-        "driveName": "MICROBIT",
+        "driveName": "asdasdasdasdasd",
         "hexMimeType": "application/x-microbit-hex",
         "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
         "flashUsableEnd": 245760,
@@ -222,8 +222,8 @@
             ]
         },
         "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
-        "vendorId": "0x0d28",
-        "productId": "0x0204",
+        "vendorId": "0x0asdasdd28",
+        "productId": "0xasdasd0204",
         "rawHID": true
     },
     "appTheme": {
