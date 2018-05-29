@@ -36,7 +36,7 @@ namespace String_ {
         decr((uint32_t)that);
       return r;
     }
-    
+
 
     //%
     int length(StringData *s) { return s->len; }
@@ -75,7 +75,7 @@ namespace String_ {
 namespace Boolean_ {
     // Cache the string literals "true" and "false" when used.
     // Note that the representation of booleans stays the usual C-one.
-    
+
     static const char sTrue[]  __attribute__ ((aligned (4))) = "\xff\xff\x04\x00" "true\0";
     static const char sFalse[] __attribute__ ((aligned (4))) = "\xff\xff\x05\x00" "false\0";
 
@@ -86,7 +86,7 @@ namespace Boolean_ {
         return (StringData*)(void*)sTrue;
       } else {
         return (StringData*)(void*)sFalse;
-      }            
+      }
     }
 
     //%
@@ -102,7 +102,7 @@ namespace Number_ {
 
     // +, - and friends are handled directly by assembly instructions
     // The comparisons are here as they are more code-size efficient
-    
+
     //%
     bool lt(int x, int y) { return x < y; }
     //%
@@ -116,14 +116,14 @@ namespace Number_ {
     //%
     bool ge(int x, int y) { return x >= y; }
 
-    // These in fact call into C runtime on Cortex-M0 
+    // These in fact call into C runtime on Cortex-M0
     //%
     int div(int x, int y) { return x / y; }
     //%
     int mod(int x, int y) { return x % y; }
 
     //%
-    bool eqDecr(int x, int y) { 
+    bool eqDecr(int x, int y) {
       if(x == y) {
         decr(y);
         return true;
@@ -147,7 +147,7 @@ namespace Math_ {
       }
       return r;
     }
-    
+
     //%
     int random(int max) {
       if (max == INT_MIN)
@@ -159,7 +159,7 @@ namespace Math_ {
       else
         return microbit_random(max);
     }
-    
+
     //%
     int sqrt(int x)
     {
@@ -208,19 +208,19 @@ namespace Array_ {
     //%
     int length(RefCollection *c) { return c->length(); }
     //%
-    void setLength(RefCollection *c, int newLength) { c->setLength(newLength); }    
+    void setLength(RefCollection *c, int newLength) { c->setLength(newLength); }
     //%
     void push(RefCollection *c, uint32_t x) { c->push(x); }
     //%
-    uint32_t pop(RefCollection *c) { return c->pop(); }    
+    uint32_t pop(RefCollection *c) { return c->pop(); }
     //%
     uint32_t getAt(RefCollection *c, int x) { return c->getAt(x); }
     //%
-    void setAt(RefCollection *c, int x, uint32_t y) { c->setAt(x, y); }    
+    void setAt(RefCollection *c, int x, uint32_t y) { c->setAt(x, y); }
     //%
     uint32_t removeAt(RefCollection *c, int x) { return c->removeAt(x); }
     //%
-    void insertAt(RefCollection *c, int x, uint32_t value) { c->insertAt(x, value); }    
+    void insertAt(RefCollection *c, int x, uint32_t value) { c->insertAt(x, value); }
     //%
     int indexOf(RefCollection *c, uint32_t x, int start) { return c->indexOf(x, start); }
     //%
@@ -230,6 +230,9 @@ namespace Array_ {
 
 // Import some stuff directly
 namespace pxt {
+
+  //%
+  int enableRadio();
   //%
   void registerWithDal(int id, int event, Action a);
   //%
@@ -316,7 +319,7 @@ namespace pxtrt {
 
   // All of the functions below unref() self. This is for performance reasons -
   // the code emitter will not emit the unrefs for them.
- 
+
   //%
   uint32_t ldfld(RefRecord *r, int idx) {
     auto tmp = r->ld(idx);
@@ -449,7 +452,7 @@ namespace pxtrt {
       }
       map->data[i].val = val;
     }
-    map->unref();      
+    map->unref();
   }
 
   //
