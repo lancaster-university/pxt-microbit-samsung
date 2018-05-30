@@ -1,0 +1,271 @@
+{
+  "id": "microbit",
+  "nickname": "microbit",
+  "name": "makecode.microbit.org",
+  "title": "Microsoft MakeCode for micro:bit",
+  "description": "A Blocks / JavaScript code editor for the micro:bit powered by Microsoft MakeCode.",
+  "corepkg": "core",
+  "cloud": {
+    "workspace": false,
+    "packages": true,
+    "sharing": true,
+    "publishing": true,
+    "preferredPackages": [
+      "Microsoft/pxt-neopixel"
+    ],
+    "githubPackages": true
+  },
+  "compile": {
+    "isNative": false,
+    "hasHex": true,
+    "deployDrives": "(MICROBIT|MBED)",
+    "driveName": "asdasdasdasdasd",
+    "hexMimeType": "application/x-microbit-hex",
+    "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
+    "flashUsableEnd": 245760,
+    "flashEnd": 245760,
+    "flashCodeAlign": 1024,
+    "upgrades": [
+      {
+        "type": "package",
+        "map": {
+          "microbit": "core",
+          "microbit-bluetooth": "bluetooth",
+          "microbit-radio": "radio",
+          "microbit-devices": "devices",
+          "microbit-led": "",
+          "microbit-music": "",
+          "microbit-game": "",
+          "microbit-pins": "",
+          "microbit-serial": ""
+        }
+      },
+      {
+        "type": "missingPackage",
+        "map": {
+          "radio\\s*\\.": "radio",
+          "bluetooth\\s*\\.": "bluetooth",
+          "devices\\s*\\.": "devices"
+        }
+      },
+      {
+        "type": "api",
+        "map": {
+          "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+          "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+          "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass("
+        }
+      },
+      {
+        "type": "blockId",
+        "map": {
+          "device_get_acceleration": "device_acceleration"
+        }
+      },
+      {
+        "type": "blockValue",
+        "map": {
+          "device_print_message.message": "text"
+        }
+      }
+    ],
+    "hidSelectors": [
+      {
+        "usagePage": "0xFF00",
+        "usageId": "0x0001",
+        "vid": "0x0d28",
+        "pid": "0x0204"
+      }
+    ],
+    "jsRefCounting": true
+  },
+  "runtime": {
+    "mathBlocks": true,
+    "loopsBlocks": true,
+    "logicBlocks": true,
+    "variablesBlocks": true,
+    "textBlocks": true,
+    "listsBlocks": true,
+    "functionBlocks": true,
+    "onStartColor": "#0078D7",
+    "onStartNamespace": "basic",
+    "onStartWeight": 54
+  },
+  "simulator": {
+    "autoRun": true,
+    "enableTrace": true,
+    "streams": false,
+    "aspectRatio": 1.22,
+    "parts": true,
+    "partsAspectRatio": 0.69,
+    "boardDefinition": {
+      "visual": "microbit",
+      "gpioPinBlocks": [
+        [
+          "P0"
+        ],
+        [
+          "P1"
+        ],
+        [
+          "P2"
+        ],
+        [
+          "P3"
+        ],
+        [
+          "P4",
+          "P5",
+          "P6",
+          "P7"
+        ],
+        [
+          "P8",
+          "P9",
+          "P10",
+          "P11",
+          "P12"
+        ],
+        [
+          "P16"
+        ]
+      ],
+      "gpioPinMap": {
+        "P0": "P0",
+        "P1": "P1",
+        "P2": "P2",
+        "P3": "P3",
+        "P4": "P4",
+        "P5": "P5",
+        "P6": "P6",
+        "P7": "P7",
+        "P8": "P8",
+        "P9": "P9",
+        "P10": "P10",
+        "P11": "P11",
+        "P12": "P12",
+        "P13": "P13",
+        "P14": "P14",
+        "P15": "P15",
+        "P16": "P16",
+        "P19": "P19",
+        "P20": "P20"
+      },
+      "spiPins": {
+        "MOSI": "P15",
+        "MISO": "P14",
+        "SCK": "P13"
+      },
+      "i2cPins": {
+        "SDA": "P20",
+        "SCL": "P19"
+      },
+      "analogInPins": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "P10"
+      ],
+      "groundPins": [
+        "GND"
+      ],
+      "threeVoltPins": [
+        "+3v3"
+      ],
+      "attachPowerOnRight": true,
+      "onboardComponents": [
+        "accelerometer",
+        "buttonpair",
+        "ledmatrix",
+        "speaker",
+        "bluetooth",
+        "thermometer",
+        "compass"
+      ],
+      "useCrocClips": true,
+      "marginWhenBreadboarding": [
+        0,
+        0,
+        80,
+        0
+      ]
+    }
+  },
+  "compileService": {
+    "yottaTarget": "bbc-microbit-classic-gcc",
+    "yottaCorePackage": "microbit",
+    "githubCorePackage": "lancaster-university/microbit",
+    "gittag": "rest-radio",
+    "serviceId": "microbit",
+    "yottaBinary": "pxt-microbit-app-combined.hex"
+  },
+  "serial": {
+    "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
+    "log": true,
+    "useEditor": true,
+    "editorTheme": {
+      "graphBackground": "#d9d9d9",
+      "lineColors": [
+        "#6633cc",
+        "#3891A6",
+        "#3454D1",
+        "#EF767A",
+        "#F46197",
+        "#107C10"
+      ]
+    },
+    "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
+    "vendorId": "0x0asdasdd28",
+    "productId": "0xasdasd0204",
+    "rawHID": true
+  },
+  "blocksprj": {
+    "id": "blocksprj",
+    "config": {
+      "name": "{0} block",
+      "dependencies": {
+        "core": "*",
+        "weather": "*",
+        "radio": "*",
+        "cloud-variables": "*"
+      },
+      "description": "",
+      "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+      ]
+    },
+    "files": {
+      "README.md": "",
+      "dal.d.ts": "// Auto-generated. Do not edit.\ndeclare const enum DAL {\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/ExternalEvents.h\n    MICROBIT_ID_BLE = 1000,\n    MICROBIT_ID_BLE_UART = 1200,\n    MICROBIT_BLE_EVT_CONNECTED = 1,\n    MICROBIT_BLE_EVT_DISCONNECTED = 2,\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MESEvents.h\n    MES_REMOTE_CONTROL_ID = 1001,\n    MES_REMOTE_CONTROL_EVT_PLAY = 1,\n    MES_REMOTE_CONTROL_EVT_PAUSE = 2,\n    MES_REMOTE_CONTROL_EVT_STOP = 3,\n    MES_REMOTE_CONTROL_EVT_NEXTTRACK = 4,\n    MES_REMOTE_CONTROL_EVT_PREVTRACK = 5,\n    MES_REMOTE_CONTROL_EVT_FORWARD = 6,\n    MES_REMOTE_CONTROL_EVT_REWIND = 7,\n    MES_REMOTE_CONTROL_EVT_VOLUMEUP = 8,\n    MES_REMOTE_CONTROL_EVT_VOLUMEDOWN = 9,\n    MES_CAMERA_ID = 1002,\n    MES_CAMERA_EVT_LAUNCH_PHOTO_MODE = 1,\n    MES_CAMERA_EVT_LAUNCH_VIDEO_MODE = 2,\n    MES_CAMERA_EVT_TAKE_PHOTO = 3,\n    MES_CAMERA_EVT_START_VIDEO_CAPTURE = 4,\n    MES_CAMERA_EVT_STOP_VIDEO_CAPTURE = 5,\n    MES_CAMERA_EVT_STOP_PHOTO_MODE = 6,\n    MES_CAMERA_EVT_STOP_VIDEO_MODE = 7,\n    MES_CAMERA_EVT_TOGGLE_FRONT_REAR = 8,\n    MES_ALERTS_ID = 1004,\n    MES_ALERT_EVT_DISPLAY_TOAST = 1,\n    MES_ALERT_EVT_VIBRATE = 2,\n    MES_ALERT_EVT_PLAY_SOUND = 3,\n    MES_ALERT_EVT_PLAY_RINGTONE = 4,\n    MES_ALERT_EVT_FIND_MY_PHONE = 5,\n    MES_ALERT_EVT_ALARM1 = 6,\n    MES_ALERT_EVT_ALARM2 = 7,\n    MES_ALERT_EVT_ALARM3 = 8,\n    MES_ALERT_EVT_ALARM4 = 9,\n    MES_ALERT_EVT_ALARM5 = 10,\n    MES_ALERT_EVT_ALARM6 = 11,\n    MES_SIGNAL_STRENGTH_ID = 1101,\n    MES_SIGNAL_STRENGTH_EVT_NO_BAR = 1,\n    MES_SIGNAL_STRENGTH_EVT_ONE_BAR = 2,\n    MES_SIGNAL_STRENGTH_EVT_TWO_BAR = 3,\n    MES_SIGNAL_STRENGTH_EVT_THREE_BAR = 4,\n    MES_SIGNAL_STRENGTH_EVT_FOUR_BAR = 5,\n    MES_DEVICE_INFO_ID = 1103,\n    MES_DEVICE_ORIENTATION_LANDSCAPE = 1,\n    MES_DEVICE_ORIENTATION_PORTRAIT = 2,\n    MES_DEVICE_GESTURE_NONE = 3,\n    MES_DEVICE_GESTURE_DEVICE_SHAKEN = 4,\n    MES_DEVICE_DISPLAY_OFF = 5,\n    MES_DEVICE_DISPLAY_ON = 6,\n    MES_DEVICE_INCOMING_CALL = 7,\n    MES_DEVICE_INCOMING_MESSAGE = 8,\n    MES_DPAD_CONTROLLER_ID = 1104,\n    MES_DPAD_BUTTON_A_DOWN = 1,\n    MES_DPAD_BUTTON_A_UP = 2,\n    MES_DPAD_BUTTON_B_DOWN = 3,\n    MES_DPAD_BUTTON_B_UP = 4,\n    MES_DPAD_BUTTON_C_DOWN = 5,\n    MES_DPAD_BUTTON_C_UP = 6,\n    MES_DPAD_BUTTON_D_DOWN = 7,\n    MES_DPAD_BUTTON_D_UP = 8,\n    MES_DPAD_BUTTON_1_DOWN = 9,\n    MES_DPAD_BUTTON_1_UP = 10,\n    MES_DPAD_BUTTON_2_DOWN = 11,\n    MES_DPAD_BUTTON_2_UP = 12,\n    MES_DPAD_BUTTON_3_DOWN = 13,\n    MES_DPAD_BUTTON_3_UP = 14,\n    MES_DPAD_BUTTON_4_DOWN = 15,\n    MES_DPAD_BUTTON_4_UP = 16,\n    MES_BROADCAST_GENERAL_ID = 2000,\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitBLEManager.h\n    MICROBIT_BLE_PAIR_REQUEST = 1,\n    MICROBIT_BLE_PAIR_COMPLETE = 2,\n    MICROBIT_BLE_PAIR_PASSCODE = 4,\n    MICROBIT_BLE_PAIR_SUCCESSFUL = 8,\n    MICROBIT_BLE_PAIRING_TIMEOUT = 90,\n    MICROBIT_BLE_POWER_LEVELS = 8,\n    MICROBIT_BLE_MAXIMUM_BONDS = 4,\n    MICROBIT_BLE_EDDYSTONE_ADV_INTERVAL = 400,\n    MICROBIT_BLE_EDDYSTONE_DEFAULT_POWER = 240,\n    MICROBIT_BLE_STATUS_STORE_SYSATTR = 2,\n    MICROBIT_BLE_STATUS_DISCONNECT = 4,\n    MICROBIT_BLE_DISCONNECT_AFTER_PAIRING_DELAY = 500,\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitDFUService.h\n    MICROBIT_DFU_OPCODE_START_DFU = 1,\n    MICROBIT_DFU_HISTOGRAM_WIDTH = 5,\n    MICROBIT_DFU_HISTOGRAM_HEIGHT = 5,\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitIOPinService.h\n    MICROBIT_IO_PIN_SERVICE_PINCOUNT = 19,\n    MICROBIT_IO_PIN_SERVICE_DATA_SIZE = 10,\n    MICROBIT_PWM_PIN_SERVICE_DATA_SIZE = 2,\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitLEDService.h\n    MICROBIT_BLE_MAXIMUM_SCROLLTEXT = 20,\n    // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitUARTService.h\n    MICROBIT_UART_S_DEFAULT_BUF_SIZE = 20,\n    MICROBIT_UART_S_EVT_DELIM_MATCH = 1,\n    MICROBIT_UART_S_EVT_HEAD_MATCH = 2,\n    MICROBIT_UART_S_EVT_RX_FULL = 3,\n    // built/yt/yotta_modules/microbit-dal/inc/core/ErrorNo.h\n    MICROBIT_OK = 0,\n    MICROBIT_INVALID_PARAMETER = -1001,\n    MICROBIT_NOT_SUPPORTED = -1002,\n    MICROBIT_CALIBRATION_IN_PROGRESS = -1003,\n    MICROBIT_CALIBRATION_REQUIRED = -1004,\n    MICROBIT_NO_RESOURCES = -1005,\n    MICROBIT_BUSY = -1006,\n    MICROBIT_CANCELLED = -1007,\n    MICROBIT_I2C_ERROR = -1010,\n    MICROBIT_SERIAL_IN_USE = -1011,\n    MICROBIT_NO_DATA = -1012,\n    MICROBIT_OOM = 20,\n    MICROBIT_HEAP_ERROR = 30,\n    MICROBIT_NULL_DEREFERENCE = 40,\n    // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitComponent.h\n    MICROBIT_ID_BUTTON_A = 1,\n    MICROBIT_ID_BUTTON_B = 2,\n    MICROBIT_ID_BUTTON_RESET = 3,\n    MICROBIT_ID_ACCELEROMETER = 4,\n    MICROBIT_ID_COMPASS = 5,\n    MICROBIT_ID_DISPLAY = 6,\n    MICROBIT_IO_PINS = 20,\n    MICROBIT_ID_IO_P0 = 7,\n    MICROBIT_ID_IO_P1 = 8,\n    MICROBIT_ID_IO_P2 = 9,\n    MICROBIT_ID_IO_P3 = 10,\n    MICROBIT_ID_IO_P4 = 11,\n    MICROBIT_ID_IO_P5 = 12,\n    MICROBIT_ID_IO_P6 = 13,\n    MICROBIT_ID_IO_P7 = 14,\n    MICROBIT_ID_IO_P8 = 15,\n    MICROBIT_ID_IO_P9 = 16,\n    MICROBIT_ID_IO_P10 = 17,\n    MICROBIT_ID_IO_P11 = 18,\n    MICROBIT_ID_IO_P12 = 19,\n    MICROBIT_ID_IO_P13 = 20,\n    MICROBIT_ID_IO_P14 = 21,\n    MICROBIT_ID_IO_P15 = 22,\n    MICROBIT_ID_IO_P16 = 23,\n    MICROBIT_ID_IO_P19 = 24,\n    MICROBIT_ID_IO_P20 = 25,\n    MICROBIT_ID_BUTTON_AB = 26,\n    MICROBIT_ID_GESTURE = 27,\n    MICROBIT_ID_THERMOMETER = 28,\n    MICROBIT_ID_RADIO = 29,\n    MICROBIT_ID_RADIO_DATA_READY = 30,\n    MICROBIT_ID_MULTIBUTTON_ATTACH = 31,\n    MICROBIT_ID_SERIAL = 32,\n    MICROBIT_ID_MESSAGE_BUS_LISTENER = 1021,\n    MICROBIT_ID_NOTIFY_ONE = 1022,\n    MICROBIT_ID_NOTIFY = 1023,\n    MICROBIT_COMPONENT_RUNNING = 1,\n    // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitDevice.h\n    MICROBIT_NAME_LENGTH = 5,\n    MICROBIT_NAME_CODE_LETTERS = 5,\n    MICROBIT_PANIC_ERROR_CHARS = 4,\n    // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitFiber.h\n    MICROBIT_SCHEDULER_RUNNING = 1,\n    MICROBIT_FIBER_FLAG_FOB = 1,\n    MICROBIT_FIBER_FLAG_PARENT = 2,\n    MICROBIT_FIBER_FLAG_CHILD = 4,\n    MICROBIT_FIBER_FLAG_DO_NOT_PAGE = 8,\n    // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitFont.h\n    MICROBIT_FONT_WIDTH = 5,\n    MICROBIT_FONT_HEIGHT = 5,\n    MICROBIT_FONT_ASCII_START = 32,\n    MICROBIT_FONT_ASCII_END = 126,\n    // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitHeapAllocator.h\n    MICROBIT_MAXIMUM_HEAPS = 2,\n    MICROBIT_HEAP_BLOCK_FREE = 2147483648,\n    // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitListener.h\n    MESSAGE_BUS_LISTENER_PARAMETERISED = 1,\n    MESSAGE_BUS_LISTENER_METHOD = 2,\n    MESSAGE_BUS_LISTENER_BUSY = 4,\n    MESSAGE_BUS_LISTENER_REENTRANT = 8,\n    MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY = 16,\n    MESSAGE_BUS_LISTENER_DROP_IF_BUSY = 32,\n    MESSAGE_BUS_LISTENER_NONBLOCKING = 64,\n    MESSAGE_BUS_LISTENER_URGENT = 128,\n    MESSAGE_BUS_LISTENER_DELETING = 32768,\n    MESSAGE_BUS_LISTENER_IMMEDIATE = 192,\n    // built/yt/yotta_modules/microbit-dal/inc/core/NotifyEvents.h\n    MICROBIT_DISPLAY_EVT_FREE = 1,\n    MICROBIT_SERIAL_EVT_TX_EMPTY = 2,\n    MICROBIT_UART_S_EVT_TX_EMPTY = 3,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/DynamicPwm.h\n    MICROBIT_DEFAULT_PWM_PERIOD = 20000,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitAccelerometer.h\n    MICROBIT_ACCEL_PITCH_ROLL_VALID = 2,\n    MICROBIT_ACCEL_ADDED_TO_IDLE = 4,\n    MMA8653_DEFAULT_ADDR = 58,\n    MMA8653_STATUS = 0,\n    MMA8653_OUT_X_MSB = 1,\n    MMA8653_WHOAMI = 13,\n    MMA8653_XYZ_DATA_CFG = 14,\n    MMA8653_CTRL_REG1 = 42,\n    MMA8653_CTRL_REG2 = 43,\n    MMA8653_CTRL_REG3 = 44,\n    MMA8653_CTRL_REG4 = 45,\n    MMA8653_CTRL_REG5 = 46,\n    MMA8653_WHOAMI_VAL = 90,\n    MMA8653_SAMPLE_RANGES = 3,\n    MMA8653_SAMPLE_RATES = 8,\n    MICROBIT_ACCELEROMETER_EVT_DATA_UPDATE = 1,\n    MICROBIT_ACCELEROMETER_EVT_NONE = 0,\n    MICROBIT_ACCELEROMETER_EVT_TILT_UP = 1,\n    MICROBIT_ACCELEROMETER_EVT_TILT_DOWN = 2,\n    MICROBIT_ACCELEROMETER_EVT_TILT_LEFT = 3,\n    MICROBIT_ACCELEROMETER_EVT_TILT_RIGHT = 4,\n    MICROBIT_ACCELEROMETER_EVT_FACE_UP = 5,\n    MICROBIT_ACCELEROMETER_EVT_FACE_DOWN = 6,\n    MICROBIT_ACCELEROMETER_EVT_FREEFALL = 7,\n    MICROBIT_ACCELEROMETER_EVT_3G = 8,\n    MICROBIT_ACCELEROMETER_EVT_6G = 9,\n    MICROBIT_ACCELEROMETER_EVT_8G = 10,\n    MICROBIT_ACCELEROMETER_EVT_SHAKE = 11,\n    MICROBIT_ACCELEROMETER_REST_TOLERANCE = 200,\n    MICROBIT_ACCELEROMETER_TILT_TOLERANCE = 200,\n    MICROBIT_ACCELEROMETER_FREEFALL_TOLERANCE = 400,\n    MICROBIT_ACCELEROMETER_SHAKE_TOLERANCE = 400,\n    MICROBIT_ACCELEROMETER_3G_TOLERANCE = 3072,\n    MICROBIT_ACCELEROMETER_6G_TOLERANCE = 6144,\n    MICROBIT_ACCELEROMETER_8G_TOLERANCE = 8192,\n    MICROBIT_ACCELEROMETER_GESTURE_DAMPING = 5,\n    MICROBIT_ACCELEROMETER_SHAKE_DAMPING = 10,\n    MICROBIT_ACCELEROMETER_SHAKE_RTX = 30,\n    MICROBIT_ACCELEROMETER_SHAKE_COUNT_THRESHOLD = 4,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitButton.h\n    MICROBIT_BUTTON_EVT_DOWN = 1,\n    MICROBIT_BUTTON_EVT_UP = 2,\n    MICROBIT_BUTTON_EVT_CLICK = 3,\n    MICROBIT_BUTTON_EVT_LONG_CLICK = 4,\n    MICROBIT_BUTTON_EVT_HOLD = 5,\n    MICROBIT_BUTTON_EVT_DOUBLE_CLICK = 6,\n    MICROBIT_BUTTON_LONG_CLICK_TIME = 1000,\n    MICROBIT_BUTTON_HOLD_TIME = 1500,\n    MICROBIT_BUTTON_STATE = 1,\n    MICROBIT_BUTTON_STATE_HOLD_TRIGGERED = 2,\n    MICROBIT_BUTTON_STATE_CLICK = 4,\n    MICROBIT_BUTTON_STATE_LONG_CLICK = 8,\n    MICROBIT_BUTTON_SIGMA_MIN = 0,\n    MICROBIT_BUTTON_SIGMA_MAX = 12,\n    MICROBIT_BUTTON_SIGMA_THRESH_HI = 8,\n    MICROBIT_BUTTON_SIGMA_THRESH_LO = 2,\n    MICROBIT_BUTTON_DOUBLE_CLICK_THRESH = 50,\n    MICROBIT_BUTTON_SIMPLE_EVENTS = 0,\n    MICROBIT_BUTTON_ALL_EVENTS = 1,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitCompass.h\n    MAG3110_DEFAULT_ADDR = 29,\n    MAG_DR_STATUS = 0,\n    MAG_OUT_X_MSB = 1,\n    MAG_OUT_X_LSB = 2,\n    MAG_OUT_Y_MSB = 3,\n    MAG_OUT_Y_LSB = 4,\n    MAG_OUT_Z_MSB = 5,\n    MAG_OUT_Z_LSB = 6,\n    MAG_WHOAMI = 7,\n    MAG_SYSMOD = 8,\n    MAG_OFF_X_MSB = 9,\n    MAG_OFF_X_LSB = 10,\n    MAG_OFF_Y_MSB = 11,\n    MAG_OFF_Y_LSB = 12,\n    MAG_OFF_Z_MSB = 13,\n    MAG_OFF_Z_LSB = 14,\n    MAG_DIE_TEMP = 15,\n    MAG_CTRL_REG1 = 16,\n    MAG_CTRL_REG2 = 17,\n    MAG3110_SAMPLE_RATES = 11,\n    MICROBIT_COMPASS_EVT_CAL_REQUIRED = 1,\n    MICROBIT_COMPASS_EVT_CAL_START = 2,\n    MICROBIT_COMPASS_EVT_CAL_END = 3,\n    MICROBIT_COMPASS_EVT_DATA_UPDATE = 4,\n    MICROBIT_COMPASS_EVT_CONFIG_NEEDED = 5,\n    MICROBIT_COMPASS_EVT_CALIBRATE = 6,\n    MICROBIT_COMPASS_STATUS_CALIBRATED = 2,\n    MICROBIT_COMPASS_STATUS_CALIBRATING = 4,\n    MICROBIT_COMPASS_STATUS_ADDED_TO_IDLE = 8,\n    MAG3110_WHOAMI_VAL = 196,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitDisplay.h\n    MICROBIT_DISPLAY_EVT_ANIMATION_COMPLETE = 1,\n    MICROBIT_DISPLAY_EVT_LIGHT_SENSE = 2,\n    MICROBIT_DISPLAY_DEFAULT_AUTOCLEAR = 1,\n    MICROBIT_DISPLAY_SPACING = 1,\n    MICROBIT_DISPLAY_GREYSCALE_BIT_DEPTH = 8,\n    MICROBIT_DISPLAY_ANIMATE_DEFAULT_POS = -255,\n    ANIMATION_MODE_NONE = 0,\n    ANIMATION_MODE_STOPPED = 1,\n    ANIMATION_MODE_SCROLL_TEXT = 2,\n    ANIMATION_MODE_PRINT_TEXT = 3,\n    ANIMATION_MODE_SCROLL_IMAGE = 4,\n    ANIMATION_MODE_ANIMATE_IMAGE = 5,\n    ANIMATION_MODE_ANIMATE_IMAGE_WITH_CLEAR = 6,\n    ANIMATION_MODE_PRINT_CHARACTER = 7,\n    DISPLAY_MODE_BLACK_AND_WHITE = 0,\n    DISPLAY_MODE_GREYSCALE = 1,\n    DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE = 2,\n    MICROBIT_DISPLAY_ROTATION_0 = 0,\n    MICROBIT_DISPLAY_ROTATION_90 = 1,\n    MICROBIT_DISPLAY_ROTATION_180 = 2,\n    MICROBIT_DISPLAY_ROTATION_270 = 3,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitFile.h\n    READ = 1,\n    WRITE = 2,\n    READ_AND_WRITE = 3,\n    CREATE = 4,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitFileSystem.h\n    MBFS_FILENAME_LENGTH = 16,\n    MB_READ = 1,\n    MB_WRITE = 2,\n    MB_CREAT = 4,\n    MB_APPEND = 8,\n    MB_SEEK_SET = 1,\n    MB_SEEK_END = 2,\n    MB_SEEK_CUR = 4,\n    MBFS_STATUS_INITIALISED = 1,\n    MBFS_UNUSED = 65535,\n    MBFS_EOF = 61439,\n    MBFS_DELETED = 0,\n    MBFS_DIRECTORY_ENTRY_FREE = 32768,\n    MBFS_DIRECTORY_ENTRY_VALID = 16384,\n    MBFS_DIRECTORY_ENTRY_DIRECTORY = 8192,\n    MBFS_DIRECTORY_ENTRY_NEW = 65535,\n    MBFS_DIRECTORY_ENTRY_DELETED = 0,\n    MBFS_BLOCK_TYPE_FILE = 1,\n    MBFS_BLOCK_TYPE_DIRECTORY = 2,\n    MBFS_BLOCK_TYPE_FILETABLE = 3,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitFlash.h\n    PAGE_SIZE = 1024,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitI2C.h\n    MICROBIT_I2C_MAX_RETRIES = 9,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitLightSensor.h\n    MICROBIT_LIGHT_SENSOR_CHAN_NUM = 3,\n    MICROBIT_LIGHT_SENSOR_AN_SET_TIME = 4000,\n    MICROBIT_LIGHT_SENSOR_TICK_PERIOD = 5,\n    MICROBIT_LIGHT_SENSOR_MAX_VALUE = 338,\n    MICROBIT_LIGHT_SENSOR_MIN_VALUE = 75,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitMatrixMaps.h\n    NO_CONN = 0,\n    MICROBIT_DISPLAY_WIDTH = 5,\n    MICROBIT_DISPLAY_HEIGHT = 5,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitMultiButton.h\n    MICROBIT_MULTI_BUTTON_STATE_1 = 1,\n    MICROBIT_MULTI_BUTTON_STATE_2 = 2,\n    MICROBIT_MULTI_BUTTON_HOLD_TRIGGERED_1 = 4,\n    MICROBIT_MULTI_BUTTON_HOLD_TRIGGERED_2 = 8,\n    MICROBIT_MULTI_BUTTON_SUPRESSED_1 = 16,\n    MICROBIT_MULTI_BUTTON_SUPRESSED_2 = 32,\n    MICROBIT_MULTI_BUTTON_ATTACHED = 64,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitPin.h\n    IO_STATUS_DIGITAL_IN = 1,\n    IO_STATUS_DIGITAL_OUT = 2,\n    IO_STATUS_ANALOG_IN = 4,\n    IO_STATUS_ANALOG_OUT = 8,\n    IO_STATUS_TOUCH_IN = 16,\n    IO_STATUS_EVENT_ON_EDGE = 32,\n    IO_STATUS_EVENT_PULSE_ON_EDGE = 64,\n    MICROBIT_PIN_MAX_OUTPUT = 1023,\n    MICROBIT_PIN_MAX_SERVO_RANGE = 180,\n    MICROBIT_PIN_DEFAULT_SERVO_RANGE = 2000,\n    MICROBIT_PIN_DEFAULT_SERVO_CENTER = 1500,\n    MICROBIT_PIN_EVENT_NONE = 0,\n    MICROBIT_PIN_EVENT_ON_EDGE = 1,\n    MICROBIT_PIN_EVENT_ON_PULSE = 2,\n    MICROBIT_PIN_EVENT_ON_TOUCH = 3,\n    MICROBIT_PIN_EVT_RISE = 2,\n    MICROBIT_PIN_EVT_FALL = 3,\n    MICROBIT_PIN_EVT_PULSE_HI = 4,\n    MICROBIT_PIN_EVT_PULSE_LO = 5,\n    PIN_CAPABILITY_DIGITAL_IN = 1,\n    PIN_CAPABILITY_DIGITAL_OUT = 2,\n    PIN_CAPABILITY_DIGITAL = 3,\n    PIN_CAPABILITY_ANALOG_IN = 4,\n    PIN_CAPABILITY_ANALOG_OUT = 8,\n    PIN_CAPABILITY_ANALOG = 12,\n    PIN_CAPABILITY_STANDARD = 11,\n    PIN_CAPABILITY_ALL = 15,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitQuadratureDecoder.h\n    QDEC_USE_SYSTEM_TICK = 1,\n    QDEC_USE_DEBOUNCE = 2,\n    QDEC_LED_ACTIVE_LOW = 4,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitRadio.h\n    MICROBIT_RADIO_STATUS_INITIALISED = 1,\n    MICROBIT_RADIO_BASE_ADDRESS = 1969383796,\n    MICROBIT_RADIO_DEFAULT_GROUP = 0,\n    MICROBIT_RADIO_DEFAULT_TX_POWER = 6,\n    MICROBIT_RADIO_DEFAULT_FREQUENCY = 7,\n    MICROBIT_RADIO_MAX_PACKET_SIZE = 32,\n    MICROBIT_RADIO_HEADER_SIZE = 4,\n    MICROBIT_RADIO_MAXIMUM_RX_BUFFERS = 4,\n    MICROBIT_RADIO_PROTOCOL_DATAGRAM = 1,\n    MICROBIT_RADIO_PROTOCOL_EVENTBUS = 2,\n    MICROBIT_RADIO_EVT_DATAGRAM = 1,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitSerial.h\n    MICROBIT_SERIAL_DEFAULT_BAUD_RATE = 115200,\n    MICROBIT_SERIAL_DEFAULT_BUFFER_SIZE = 20,\n    MICROBIT_SERIAL_EVT_DELIM_MATCH = 1,\n    MICROBIT_SERIAL_EVT_HEAD_MATCH = 2,\n    MICROBIT_SERIAL_EVT_RX_FULL = 3,\n    MICROBIT_SERIAL_RX_IN_USE = 1,\n    MICROBIT_SERIAL_TX_IN_USE = 2,\n    MICROBIT_SERIAL_RX_BUFF_INIT = 4,\n    MICROBIT_SERIAL_TX_BUFF_INIT = 8,\n    ASYNC = 0,\n    SYNC_SPINWAIT = 1,\n    SYNC_SLEEP = 2,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitStorage.h\n    MICROBIT_STORAGE_MAGIC = 51966,\n    MICROBIT_STORAGE_BLOCK_SIZE = 48,\n    MICROBIT_STORAGE_KEY_SIZE = 16,\n    MICROBIT_STORAGE_STORE_PAGE_OFFSET = 17,\n    MICROBIT_STORAGE_SCRATCH_PAGE_OFFSET = 19,\n    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitThermometer.h\n    MICROBIT_THERMOMETER_PERIOD = 1000,\n    MICROBIT_THERMOMETER_EVT_UPDATE = 1,\n    MICROBIT_THERMOMETER_ADDED_TO_IDLE = 2,\n    // built/yt/yotta_modules/microbit-dal/inc/types/MicroBitCoordinateSystem.h\n    RAW = 0,\n    SIMPLE_CARTESIAN = 1,\n    NORTH_EAST_DOWN = 2,\n    // built/yt/yotta_modules/microbit-dal/inc/types/MicroBitEvent.h\n    MICROBIT_ID_ANY = 0,\n    MICROBIT_EVT_ANY = 0,\n    CREATE_ONLY = 0,\n    CREATE_AND_FIRE = 1,\n    MICROBIT_EVENT_DEFAULT_LAUNCH_MODE = 1,\n}\n",
+      "main.blocks": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <block type=\"pxt-on-start\"></block>\n  <block type=\"device_forever\"></block>\n</xml>",
+      "main.ts": "\n"
+    }
+  },
+  "tsprj": {
+    "id": "tsprj",
+    "config": {
+      "name": "{0} bit",
+      "dependencies": {
+        "core": "*",
+        "radio": "*"
+      },
+      "description": "",
+      "files": [
+        "main.ts",
+        "README.md"
+      ]
+    },
+    "files": {
+      "README.md": "",
+      "main.ts": "basic.showLeds(`\n    . . . . .\n    . # . # .\n    . . . . .\n    # . . . #\n    . # # # .\n    `);"
+    }
+  },
+  "versions": {
+    "target": "0.14.37",
+    "pxt": "0.19.7",
+    "pxtCrowdinBranch": "v0"
+  }
+}
