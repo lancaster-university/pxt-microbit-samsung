@@ -1,0 +1,9 @@
+{
+  "carbon.queryCarbonGenerationMix|block": "query Carbon Generation Mix|for type %mix",
+  "carbon.queryCarbonIndexText|block": "get carbon index as text",
+  "carbon.queryCarbonIndex|block": "get carbon index",
+  "carbon.queryCarbonValue|block": "query Carbon Value",
+  "carbon.setCarbonIndexValueType|block": "carbonIndex %index",
+  "carbon.setGenerationMixType|block": "GenerationMixType %mixType",
+  "{id:category}Carbon": "Carbon"
+}

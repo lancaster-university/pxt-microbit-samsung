@@ -1,0 +1,6 @@
+{
+  "energy.queryEnergy|block": "get Energy Level|for %t |for other school %schoolid",
+  "energy.querySchoolEnergy|block": "get Energy Level|for %t |for my school",
+  "energy.setEnergyType|block": "energyType %energyType",
+  "{id:category}Energy": "Energy"
+}

@@ -1,0 +1,5 @@
+{
+  "initialize.initUnit|block": "init raspberry pi to| %name |as id for %t",
+  "initialize.setInitType|block": " type %idtype",
+  "{id:category}Initialize": "Initialize"
+}
