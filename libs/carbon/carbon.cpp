@@ -39,13 +39,15 @@ namespace carbon {
     }
 
     //%
-    StringData* queryCarbonValue()
+    int queryCarbonValue()
     {
         init();
 
         ManagedString command = "value";
         ManagedString reply = CarbonService.getCarbonValue(command.leakData());
-        return reply.leakData();
+        int value = (int)atof(reply.toCharArray());
+        reply.leakData();
+        return value;
     }
 
     //Convert the carbon index from string to int
@@ -83,7 +85,7 @@ namespace carbon {
     }
 
     //%
-    StringData* queryCarbonGenerationMix(int mix)
+    int queryCarbonGenerationMix(int mix)
     {
         init();
 
@@ -97,12 +99,13 @@ namespace carbon {
             mix = (int)GenerationMixType::other;
         }
                
-
         ManagedString command = "genmix/";
         command = command + generationTypes[mix];
         
         ManagedString reply = CarbonService.getCarbonGenerationMix(command.leakData());
-        return reply.leakData();
+        int value = (int)atof(reply.toCharArray());
+        reply.leakData();
+        return value;
     }
 
     //%
