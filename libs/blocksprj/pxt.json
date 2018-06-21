@@ -4,7 +4,11 @@
         "core": "file:../core",
         "weather": "file:../weather",
         "radio": "file:../radio",
-        "cloud-variables": "file:../cloud-variables"
+        "energy": "file:../energy",
+        "carbon": "file:../carbon",
+        "share": "file:../share",
+        "initialize": "file:../initialize",
+        "samsung-iot": "file:../samsung-iot"
     },
     "description": "",
     "files": [

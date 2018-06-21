@@ -1,0 +1,36 @@
+{
+    "name": "energy",
+    "description": "The Energy library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {
+        "core": "file:../core"
+    },
+    "testFiles": [
+        "test.ts"
+    ],
+    "files": [
+        "energy.cpp",
+        "energy.ts",
+        "shims.d.ts",
+        "enums.d.ts",
+        "README.md"
+    ],
+    "public": true,
+    "yotta": {
+        "dependencies": {
+            "rest-radio": "lancaster-university/rest-radio#master"
+        },
+        "config": {
+            "microbit-dal": {
+                "radio": {
+                    "version": "MICROBIT_RADIO_MODIFIED"
+                },
+                "bluetooth": {
+                    "enabled": 0
+                }
+            }
+        }
+    },
+    "installedVersion": "file:../energy"
+}
