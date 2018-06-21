@@ -7,15 +7,19 @@ namespace energy {
         return energyType;
     }
 
-    //% blockId=energy_queryEnergy block="query Energy Level|for %t |for other school %schoolid" weight=84
+    
+
+    //% blockId=energy_queryEnergy block="get Energy Level|for %t |for other school %schoolid" weight=84
     //% shim=energy::queryEnergy
-    export function queryEnergy(t: number, schoolid:string): string {
-        return "224.34";
+    export function queryEnergy(t: number, schoolid:string): number {
+        return 33;
     }
 
-    //% blockId=energy_querySchoolEnergy block="query Energy Level|for %t |for my school" weight=83
+    
+
+    //% blockId=energy_querySchoolEnergy block="get Energy Level|for %t |for my school" weight=83
     //% shim=energy::querySchoolEnergy
-    export function querySchoolEnergy(t: number): string {
-        return "124.56";
+    export function querySchoolEnergy(t: number): number {
+        return 124;
     }
 }

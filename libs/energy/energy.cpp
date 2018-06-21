@@ -21,8 +21,8 @@ namespace energy {
         return enableRadio();
     }
 
-    //%
-    StringData* queryEnergy(int t, StringData* schoolid)
+    
+    StringData* queryEnergyText(int t, StringData* schoolid)
     {
         init();
 
@@ -51,7 +51,16 @@ namespace energy {
     }
 
     //%
-    StringData* querySchoolEnergy(int t)
+    int queryEnergy(int t, StringData* schoolid)
+    {
+        ManagedString result = queryEnergyText(t,schoolid);
+        int value = (int)atof(result.toCharArray());
+        result.leakData();
+        return value;
+    }
+
+    
+    StringData* querySchoolEnergyText(int t)
     {
         init();
 
@@ -76,6 +85,15 @@ namespace energy {
 
         ManagedString reply = EnergyService.getEnergyLevel(command.leakData());
         return reply.leakData();
+    }
+
+    //%
+    int querySchoolEnergy(int t)
+    {
+        ManagedString result = querySchoolEnergyText(t);
+        int value = (int)atof(result.toCharArray());
+        result.leakData();
+        return value;
     }
 
     //%
