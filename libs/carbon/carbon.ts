@@ -2,19 +2,19 @@
 namespace carbon {
 
 
-    //% blockId=carbon_setGenerationMixType block="GenerationMixType %mixType" weight=75
+    //% blockId=carbon_setGenerationMixType block="generation mix type %mixType" weight=75
     //% shim=carbon::setGenerationMixType
     export function setGenerationMixType(mixType:GenerationMixType): number {
         return mixType;
     }
 
-    //% blockId=carbon_setCarbonIndexValueType block="carbonIndex %index" weight=75
+    //% blockId=carbon_setCarbonIndexValueType block="carbon index level %index" weight=75
     //% shim=carbon::setCarbonIndexValueType
     export function setCarbonIndexValueType(index:CarbonIndex): number {
         return index;
     }
 
-    //% blockId=carbon_queryCarbonValue block="query Carbon Value" weight=74
+    //% blockId=carbon_queryCarbonValue block="get carbon value" weight=74
     //% shim=carbon::queryCarbonValue
     export function queryCarbonValue(): number {
         return 66;
@@ -32,7 +32,7 @@ namespace carbon {
         return "moderate";
     }
 
-    //% blockId=carbon_queryCarbonGenerationMix block="query Carbon Generation Mix|for type %mix" weight=71
+    //% blockId=carbon_queryCarbonGenerationMix block="get carbon generation mix|for type %mix" weight=71
     //% shim=carbon::queryCarbonGenerationMix
     export function queryCarbonGenerationMix(mix : number): number {
         return 22;

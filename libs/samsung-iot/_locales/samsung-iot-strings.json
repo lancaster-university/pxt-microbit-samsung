@@ -1,10 +1,10 @@
 {
-  "samsungiot.getSensorState|block": "Get Sensor State| %name",
-  "samsungiot.setBulbColour|block": "Turn bulb| %name |to colour %colour",
-  "samsungiot.setBulbLevel|block": "Turn bulb| %name |to level %level",
-  "samsungiot.setBulbState|block": "Turn bulb| %name |to %t",
-  "samsungiot.setLightColour|block": "Colour %colour",
-  "samsungiot.setSwitchState|block": "State %status",
-  "samsungiot.turnSwitch|block": "Turn Switch| %name |to %t",
+  "samsungiot.getSensorState|block": "get sensor state| %name",
+  "samsungiot.setBulbColour|block": "turn bulb| %name |to colour %colour",
+  "samsungiot.setBulbLevel|block": "turn bulb| %name |to level %level",
+  "samsungiot.setBulbState|block": "turn bulb| %name |to %t",
+  "samsungiot.setLightColour|block": "colour %colour",
+  "samsungiot.setSwitchState|block": "on / off state %status",
+  "samsungiot.turnSwitch|block": "turn switch| %name |to %t",
   "{id:category}Samsungiot": "Samsungiot"
 }

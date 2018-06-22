@@ -51,6 +51,8 @@ namespace carbon {
     }
 
     //Convert the carbon index from string to int
+    // 'very low' 'low' 'moderate' 'high' 'very high'
+    //  0          1     2          3      4
     //%
     int queryCarbonIndex()
     {
@@ -63,6 +65,8 @@ namespace carbon {
 
         for(int loop=0; loop < 5; ++ loop)
         {
+            //Compare the response text with the items in the array
+            //if we get a match, the loop value is the correct number to return
             if(strcmp(carbonIndexValueTypes[loop], reply.toCharArray()) == 0)
             {
                 replyValue = loop;
@@ -89,6 +93,7 @@ namespace carbon {
     {
         init();
 
+        //Check the input value bounds
         if(mix < 0)
         {
             mix = 0;
@@ -103,6 +108,8 @@ namespace carbon {
         command = command + generationTypes[mix];
         
         ManagedString reply = CarbonService.getCarbonGenerationMix(command.leakData());
+
+        //Convert the string floating point value into an integer
         int value = (int)atof(reply.toCharArray());
         reply.leakData();
         return value;

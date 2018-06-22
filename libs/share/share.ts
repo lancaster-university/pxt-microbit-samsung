@@ -2,13 +2,13 @@
 namespace share {
 
 
-    //% blockId=share_setShareLevel block="Share Level %ShareLevel" weight=54
+    //% blockId=share_setShareLevel block="share level %ShareLevel" weight=54
     //% shim=share::setShareLevel
     export function setShareLevel(sharelevel:ShareLevel): number {
         return sharelevel;
     }
 
-    //% blockId=share_shareData block="Share Data %data |called %name |with %level" weight=53
+    //% blockId=share_shareData block="share data %data |called %name |with %level" weight=53
     //% shim=share::shareData
     export function shareData(data:string, name:string, level:number) {
     }
