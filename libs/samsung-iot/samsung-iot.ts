@@ -21,24 +21,48 @@ namespace samsungiot {
         return lightcolour;
     }
 
-    //% blockId=samsungiot_setBulbState block="turn bulb| %name |to %t" weight=65
+    //% blockId=samsungiot_setBulbState block="turn bulb| %name |to %t" weight=60
     //% shim=samsungiot::setBulbState
     export function setBulbState(name:string, state: boolean){
     }
 
-    //% blockId=samsungiot_setBulbLevel block="turn bulb| %name |to level %level" weight=64
+    //% blockId=samsungiot_getBulbState block="get bulb state %name" weight=64
+    //% shim=samsungiot::getBulbState
+    export function getBulbState(name:string): boolean {
+        return true;
+    }
+
+    //% blockId=samsungiot_getBulbLevel block="get bulb level %name" weight=63
+    //% shim=samsungiot::getBulbLevel
+    export function getBulbLevel(name:string): number {
+        return 30;
+    }
+
+    //% blockId=samsungiot_getBulbColour block="get bulb colour %name" weight=62
+    //% shim=samsungiot::getBulbColour
+    export function getBulbColour(name:string): number {
+        return 3;
+    }
+
+    //% blockId=samsungiot_setBulbLevel block="turn bulb| %name |to level %level" weight=59
     //% shim=samsungiot::setBulbLevel
     export function setBulbLevel(name:string, level: number){
     }
 
-    //% blockId=samsungiot_setBulbColour block="turn bulb| %name |to colour %colour" weight=63
+    //% blockId=samsungiot_setBulbColour block="turn bulb| %name |to colour %colour" weight=58
     //% shim=samsungiot::setBulbColour
     export function setBulbColour(name:string, colour: number){
     }
 
-    //% blockId=samsungiot_turnSwitch block="turn switch| %name |to %t" weight=62
+    //% blockId=samsungiot_turnSwitch block="turn switch| %name |to %t" weight=57
     //% shim=samsungiot::turnSwitch
     export function turnSwitch(name:string, state: boolean) {
+    }
+
+    //% blockId=samsungiot_getSwitchState block="get switch state %name" weight=64
+    //% shim=samsungiot::getSwitchState
+    export function getSwitchState(name:string): boolean {
+        return true;
     }
 
 

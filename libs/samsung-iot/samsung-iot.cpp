@@ -59,6 +59,15 @@ namespace samsungiot {
     }
 
     //%
+    bool getBulbState(StringData* bulbName)
+    {
+        init();
+        ManagedString s = IotService.getBulbState(ManagedString(bulbName));
+
+        return true;
+    }
+
+    //%
     void setBulbLevel(StringData* bulbName, int level)
     {
         init();
@@ -72,6 +81,15 @@ namespace samsungiot {
             level = 99;
         }
         IotService.setBulbVal(ManagedString(bulbName), level);
+    }
+
+    //%
+    int getBulbLevel(StringData* bulbName)
+    {
+        init();
+        ManagedString s = IotService.getBulbLevel(ManagedString(bulbName));
+
+        return 40;
     }
 
     //%
@@ -90,10 +108,28 @@ namespace samsungiot {
     }
 
     //%
+    int getBulbColor(StringData* bulbName)
+    {
+        init();
+        ManagedString s = IotService.getBulbColour(ManagedString(bulbName));
+
+        return 3;
+    }
+
+    //%
     void turnSwitch(StringData* switchName, SwitchState switchState)
     {
         init();
         IotService.setSwitchState(ManagedString(switchName),(int)switchState);
+    }
+
+    //%
+    bool getSwitchState(StringData* switchName)
+    {
+        init();
+        ManagedString s = IotService.getSwitchState(ManagedString(switchName));
+
+        return true;
     }
 
 
