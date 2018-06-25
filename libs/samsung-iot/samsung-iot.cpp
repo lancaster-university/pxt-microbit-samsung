@@ -103,7 +103,7 @@ namespace samsungiot {
         init();
         ManagedString command = "sensorState/";
         command = command + sensorName;
-        ManagedString s = "active"; //IotService.getSensorState(command.leakData());
+        ManagedString s = IotService.getSensorState(command.leakData());
 
         bool result = false;
         if(strcmp("active", s.toCharArray()) == 0)
