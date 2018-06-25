@@ -13,7 +13,7 @@ enum class InitType{
 
 InitService InitService(uBit.radio);
 
-//% color=#51008B weight=100 icon="\uf019" block="Initialize"
+//% color=#51008B weight=100 icon="\uf019" block="Initialise"
 namespace initialize {
 
     int init() {

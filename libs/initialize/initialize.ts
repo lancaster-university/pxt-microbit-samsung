@@ -1,4 +1,4 @@
-//% color=#800000 weight=100 icon="\uf019" block="Initialize"
+//% color=#800000 weight=100 icon="\uf019" block="Initialise"
 namespace initialize {
 
     //% blockId=initialize_setInitType block=" type %idtype" weight=95

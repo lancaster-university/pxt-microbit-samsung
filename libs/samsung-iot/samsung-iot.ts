@@ -44,7 +44,7 @@ namespace samsungiot {
 
     //% blockId=samsungiot_getSensorState block="get sensor state| %name" weight=61
     //% shim=samsungiot::getSensorState
-    export function getSensorState(name:string): string {
-        return "active";
+    export function getSensorState(name:string): boolean {
+        return true;
     }
 }

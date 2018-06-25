@@ -5,7 +5,7 @@
      * share
      * use
      */
-    //% color=#51008B weight=100 icon="\uf019" block="Initialize"
+    //% color=#51008B weight=100 icon="\uf019" block="Initialise"
 declare namespace initialize {
 }
 
