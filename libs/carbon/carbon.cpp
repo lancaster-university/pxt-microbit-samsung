@@ -39,16 +39,16 @@ namespace carbon {
     }
 
     //%
-    StringData *queryCarbonValue()
+    int queryCarbonValue()
     {
         init();
 
         ManagedString command = "value";
         ManagedString reply = CarbonService.getCarbonValue(command.leakData());
         //uBit.display.scroll(reply);
-        //int value = (int)atof(reply.toCharArray());
-        
-        return reply.leakData();
+        int value = (int)atof(reply.toCharArray());
+        reply.leakData();
+        return value;
     }
 
     //Convert the carbon index from string to int
