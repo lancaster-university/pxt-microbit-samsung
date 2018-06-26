@@ -3,6 +3,7 @@
   "samsungiot.getBulbLevel|block": "get bulb level %name",
   "samsungiot.getBulbState|block": "get bulb state %name",
   "samsungiot.getSensorState|block": "get sensor state| %name",
+  "samsungiot.getSwitchState|block": "get switch state %name",
   "samsungiot.setBulbColour|block": "turn bulb| %name |to colour %colour",
   "samsungiot.setBulbLevel|block": "turn bulb| %name |to level %level",
   "samsungiot.setBulbState|block": "turn bulb| %name |to %t",

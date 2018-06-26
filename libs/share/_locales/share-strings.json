@@ -1,7 +1,9 @@
 {
   "share.fetchData|block": "fetch shared data called %name |from school %targetSchool",
   "share.fetchSchoolData|block": "fetch shared data called %name |from my school",
+  "share.numberToText|block": "number to text %value",
   "share.setShareLevel|block": "share level %ShareLevel",
   "share.shareData|block": "share data %data |called %name |with %level",
+  "share.textToNumber|block": "text to number %text",
   "{id:category}Share": "Share"
 }

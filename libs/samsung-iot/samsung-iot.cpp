@@ -55,7 +55,8 @@ namespace samsungiot {
     void setBulbState(StringData* bulbName, SwitchState switchState)
     {
         init();
-        IotService.setBulbState(ManagedString(bulbName), (int)switchState);
+        ManagedString result = IotService.setBulbState(ManagedString(bulbName), (int)switchState);
+        uBit.display.scroll(result.leakData());
     }
 
     //%
@@ -76,9 +77,9 @@ namespace samsungiot {
         {
             level = 0;
         }
-        if(level > 99)
+        if(level > 100)
         {
-            level = 99;
+            level = 100;
         }
         IotService.setBulbVal(ManagedString(bulbName), level);
     }

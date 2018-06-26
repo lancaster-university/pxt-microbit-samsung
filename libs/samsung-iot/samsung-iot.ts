@@ -23,7 +23,8 @@ namespace samsungiot {
 
     //% blockId=samsungiot_setBulbState block="turn bulb| %name |to %t" weight=60
     //% shim=samsungiot::setBulbState
-    export function setBulbState(name:string, state: boolean){
+    export function setBulbState(name:string, state: boolean): void{
+        return;
     }
 
     //% blockId=samsungiot_getBulbState block="get bulb state %name" weight=64
@@ -46,17 +47,20 @@ namespace samsungiot {
 
     //% blockId=samsungiot_setBulbLevel block="turn bulb| %name |to level %level" weight=59
     //% shim=samsungiot::setBulbLevel
-    export function setBulbLevel(name:string, level: number){
+    export function setBulbLevel(name:string, level: number): void{
+        return;
     }
 
     //% blockId=samsungiot_setBulbColour block="turn bulb| %name |to colour %colour" weight=58
     //% shim=samsungiot::setBulbColour
-    export function setBulbColour(name:string, colour: number){
+    export function setBulbColour(name:string, colour: number): void{
+        return;
     }
 
     //% blockId=samsungiot_turnSwitch block="turn switch| %name |to %t" weight=57
     //% shim=samsungiot::turnSwitch
-    export function turnSwitch(name:string, state: boolean) {
+    export function turnSwitch(name:string, state: boolean): void {
+        return;
     }
 
     //% blockId=samsungiot_getSwitchState block="get switch state %name" weight=64

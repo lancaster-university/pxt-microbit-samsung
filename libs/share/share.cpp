@@ -26,6 +26,15 @@ namespace share {
     void shareData(StringData* data, StringData* name, int level)
     {
         init();
+        //This forces the input to be either a 1 or 0. Anything else becomes a 1 (school)
+        if(level == (int)ShareLevel::all)
+        {
+            level = 0;
+        }
+        else
+        {
+            level = 1;
+        }
         ShareService.setShareData(data,name,level);
     }
 
@@ -52,6 +61,27 @@ namespace share {
         command = command + "/local";
         ManagedString reply = ShareService.getFetchData(command.leakData());
         return reply.leakData();
+    }
+
+    //%
+    int textToNumber(StringData* text)
+    {
+        init();
+        ManagedString managedText = (ManagedString)text;
+        int value = (int)atof(managedText.toCharArray());
+        managedText.leakData();
+        return value;
+    }
+
+
+    //%
+    StringData* numberToText(int value)
+    {
+        init();
+        char buffer[15];
+        memset(buffer,0,sizeof(buffer));
+        sprintf(buffer,"%d",value);
+        return ManagedString(buffer).leakData();
     }
 
     //%
