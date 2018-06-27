@@ -62,10 +62,15 @@ namespace samsungiot {
     //%
     bool getBulbState(StringData* bulbName)
     {
+        bool state = false;
         init();
-        ManagedString s = IotService.getBulbState(ManagedString(bulbName));
-
-        return true;
+        ManagedString result = IotService.getBulbState(ManagedString(bulbName));
+        if(strcmp(result.toCharArray(), "OK") == 0)
+        {
+            state = true;
+        }
+        result.leakData();
+        return state;
     }
 
     //%
@@ -81,7 +86,8 @@ namespace samsungiot {
         {
             level = 100;
         }
-        IotService.setBulbVal(ManagedString(bulbName), level);
+        ManagedString result = IotService.setBulbVal(ManagedString(bulbName), level);
+        uBit.display.scroll(result.leakData());
     }
 
     //%
@@ -89,8 +95,9 @@ namespace samsungiot {
     {
         init();
         ManagedString s = IotService.getBulbLevel(ManagedString(bulbName));
-
-        return 40;
+        int status = atoi(s.toCharArray());
+        s.leakData();
+        return status;
     }
 
     //%
@@ -105,7 +112,8 @@ namespace samsungiot {
         {
             colour = (int)BulbColour::white;
         }
-        IotService.setBulbColour(ManagedString(bulbName), colour);
+        ManagedString result = IotService.setBulbColour(ManagedString(bulbName), colour);
+        uBit.display.scroll(result.leakData());
     }
 
     //%
@@ -113,24 +121,32 @@ namespace samsungiot {
     {
         init();
         ManagedString s = IotService.getBulbColour(ManagedString(bulbName));
-
-        return 3;
+        int status = atoi(s.toCharArray());
+        s.leakData();
+        return status;
     }
 
     //%
     void turnSwitch(StringData* switchName, SwitchState switchState)
     {
         init();
-        IotService.setSwitchState(ManagedString(switchName),(int)switchState);
+        ManagedString result = IotService.setSwitchState(ManagedString(switchName),(int)switchState);
+        uBit.display.scroll(result.leakData());
     }
 
     //%
     bool getSwitchState(StringData* switchName)
     {
-        init();
-        ManagedString s = IotService.getSwitchState(ManagedString(switchName));
+        bool state = false;
 
-        return true;
+        init();
+        ManagedString result = IotService.getSwitchState(ManagedString(switchName));
+        if(strcmp(result.toCharArray(), "OK") == 0)
+        {
+            state = true;
+        }
+        result.leakData();
+        return state;
     }
 
 

@@ -16,8 +16,8 @@ namespace carbon {
 
     //% blockId=carbon_queryCarbonValue block="get carbon value" weight=74
     //% shim=carbon::queryCarbonValue
-    export function queryCarbonValue(): string {
-        return "66";
+    export function queryCarbonValue(): number {
+        return 236;
     }
 
     //% blockId=carbon_queryCarbonIndex block="get carbon index" weight=73
