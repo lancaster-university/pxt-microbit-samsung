@@ -56,7 +56,7 @@ namespace samsungiot {
     {
         init();
         ManagedString result = IotService.setBulbState(ManagedString(bulbName), (int)switchState);
-        uBit.display.scroll(result.leakData());
+        result.leakData();
     }
 
     //%
@@ -87,7 +87,7 @@ namespace samsungiot {
             level = 100;
         }
         ManagedString result = IotService.setBulbVal(ManagedString(bulbName), level);
-        uBit.display.scroll(result.leakData());
+        result.leakData();
     }
 
     //%
@@ -113,7 +113,7 @@ namespace samsungiot {
             colour = (int)BulbColour::white;
         }
         ManagedString result = IotService.setBulbColour(ManagedString(bulbName), colour);
-        uBit.display.scroll(result.leakData());
+        result.leakData();
     }
 
     //%
@@ -131,7 +131,7 @@ namespace samsungiot {
     {
         init();
         ManagedString result = IotService.setSwitchState(ManagedString(switchName),(int)switchState);
-        uBit.display.scroll(result.leakData());
+        result.leakData();
     }
 
     //%

@@ -47,7 +47,8 @@ namespace share {
         command = command + name;
         command = command + "/";
         command = command + targetSchool;
-        ManagedString reply = ShareService.getFetchData(command.leakData());
+        ManagedString reply = ShareService.getFetchData(command);
+        command.leakData();
         return reply.leakData();
     }
 
@@ -59,7 +60,8 @@ namespace share {
         ManagedString command = "fetchData/";
         command = command + name;
         command = command + "/local";
-        ManagedString reply = ShareService.getFetchData(command.leakData());
+        ManagedString reply = ShareService.getFetchData(command);
+        command.leakData();
         return reply.leakData();
     }
 

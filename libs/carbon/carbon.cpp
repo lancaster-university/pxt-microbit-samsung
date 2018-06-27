@@ -45,7 +45,6 @@ namespace carbon {
 
         ManagedString command = "value";
         ManagedString reply = CarbonService.getCarbonValue(command.leakData());
-        //uBit.display.scroll(reply);
         int value = (int)atof(reply.toCharArray());
         reply.leakData();
         return value;
