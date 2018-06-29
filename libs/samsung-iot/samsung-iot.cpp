@@ -62,25 +62,6 @@ namespace samsungiot {
     }
 
     //%
-    bool setSwitchState(SwitchState status)
-    {
-        if(status == SwitchState::off)
-        {
-            return false;
-        }
-        else{
-            return true;
-        }
-        return false;
-    }
-
-    //%
-    int setLightColour(BulbColour lightcolour)
-    {
-        return (int)lightcolour;
-    }
-
-    //%
     void setBulbState(StringData* bulbName, SwitchState switchState)
     {
         init();
@@ -128,18 +109,18 @@ namespace samsungiot {
     }
 
     //%
-    void setBulbColour(StringData* bulbName, int colour)
+    void setBulbColour(StringData* bulbName, BulbColour colour)
     {
         init();
-        if(colour < 0)
+        if((int)colour < (int)BulbColour::red)
         {
-            colour = 0;
+            colour = BulbColour::red;
         }
-        if(colour > (int)BulbColour::white)
+        if((int)colour > (int)BulbColour::white)
         {
-            colour = (int)BulbColour::white;
+            colour = BulbColour::white;
         }
-        ManagedString result = IotService.setBulbColour(ManagedString(bulbName), colour);
+        ManagedString result = IotService.setBulbColour(ManagedString(bulbName), (int)colour);
         uBit.display.scroll(result);
     }
 
