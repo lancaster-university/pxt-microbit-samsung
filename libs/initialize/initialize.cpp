@@ -25,14 +25,16 @@ namespace initialize {
     {
         init();
 
+        ManagedString result;
         if(t == (int)InitType::school)
         {
-            InitService.setSchoolId(ManagedString(initData));
+            result = InitService.setSchoolId(ManagedString(initData));
         }
         else
         {
-            InitService.setPiId(ManagedString(initData));
+            result = InitService.setPiId(ManagedString(initData));
         }
+        uBit.display.scroll(result);
     }
 
     //%

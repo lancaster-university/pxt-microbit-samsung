@@ -21,6 +21,35 @@ namespace energy {
         return enableRadio();
     }
 
+    int stringToNumber(ManagedString input)
+    {
+        ManagedString resultString = "";
+        int result = 0;
+
+        int l = input.length();
+        for(int x=0; x < l; ++x)
+        {
+            if(input.charAt(x) != '\n' && input.charAt(x) != '\r')
+            {
+                if(isdigit(input.charAt(x)) || input.charAt(x) == '.')
+                {
+                    resultString = resultString + input.charAt(x);
+                }
+                else
+                {
+                    result = -1;
+                    break;
+                }
+            }
+        }
+        if(result > -1)
+        {
+            float f = atof(resultString.toCharArray());
+            result = round(f);
+        }
+        return result;
+    }
+
     
     StringData* queryEnergyText(int t, StringData* schoolid)
     {
@@ -46,7 +75,7 @@ namespace energy {
         command = command + "/";
         command = command + schoolid;
 
-        ManagedString reply = EnergyService.getEnergyLevel(command.leakData());
+        ManagedString reply = EnergyService.getEnergyLevel(command);
         return reply.leakData();
     }
 
@@ -54,8 +83,7 @@ namespace energy {
     int queryEnergy(int t, StringData* schoolid)
     {
         ManagedString result = queryEnergyText(t,schoolid);
-        int value = (int)atof(result.toCharArray());
-        result.leakData();
+        int value = stringToNumber(result);
         return value;
     }
 
@@ -83,7 +111,7 @@ namespace energy {
         command = command + "/";
         command = command + "local";
 
-        ManagedString reply = EnergyService.getEnergyLevel(command.leakData());
+        ManagedString reply = EnergyService.getEnergyLevel(command);
         return reply.leakData();
     }
 
@@ -91,8 +119,7 @@ namespace energy {
     int querySchoolEnergy(int t)
     {
         ManagedString result = querySchoolEnergyText(t);
-        int value = (int)atof(result.toCharArray());
-        result.leakData();
+        int value = stringToNumber(result);
         return value;
     }
 

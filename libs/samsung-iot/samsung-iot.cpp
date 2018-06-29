@@ -32,6 +32,35 @@ namespace samsungiot {
         return enableRadio();
     }
 
+    int stringToNumber(ManagedString input)
+    {
+        ManagedString resultString = "";
+        int result = 0;
+
+        int l = input.length();
+        for(int x=0; x < l; ++x)
+        {
+            if(input.charAt(x) != '\n' && input.charAt(x) != '\r')
+            {
+                if(isdigit(input.charAt(x)) || input.charAt(x) == '.')
+                {
+                    resultString = resultString + input.charAt(x);
+                }
+                else
+                {
+                    result = -1;
+                    break;
+                }
+            }
+        }
+        if(result > -1)
+        {
+            float f = atof(resultString.toCharArray());
+            result = round(f);
+        }
+        return result;
+    }
+
     //%
     bool setSwitchState(SwitchState status)
     {
@@ -56,7 +85,7 @@ namespace samsungiot {
     {
         init();
         ManagedString result = IotService.setBulbState(ManagedString(bulbName), (int)switchState);
-        result.leakData();
+        uBit.display.scroll(result);
     }
 
     //%
@@ -69,7 +98,6 @@ namespace samsungiot {
         {
             state = true;
         }
-        result.leakData();
         return state;
     }
 
@@ -87,17 +115,16 @@ namespace samsungiot {
             level = 100;
         }
         ManagedString result = IotService.setBulbVal(ManagedString(bulbName), level);
-        result.leakData();
+        uBit.display.scroll(result);
     }
 
     //%
     int getBulbLevel(StringData* bulbName)
     {
         init();
-        ManagedString s = IotService.getBulbLevel(ManagedString(bulbName));
-        int status = atoi(s.toCharArray());
-        s.leakData();
-        return status;
+        ManagedString result = IotService.getBulbLevel(ManagedString(bulbName));
+        int level = stringToNumber(result);
+        return level;
     }
 
     //%
@@ -113,17 +140,16 @@ namespace samsungiot {
             colour = (int)BulbColour::white;
         }
         ManagedString result = IotService.setBulbColour(ManagedString(bulbName), colour);
-        result.leakData();
+        uBit.display.scroll(result);
     }
 
     //%
     int getBulbColor(StringData* bulbName)
     {
         init();
-        ManagedString s = IotService.getBulbColour(ManagedString(bulbName));
-        int status = atoi(s.toCharArray());
-        s.leakData();
-        return status;
+        ManagedString result = IotService.getBulbColour(ManagedString(bulbName));
+        int colour = stringToNumber(result);
+        return colour;
     }
 
     //%
@@ -131,7 +157,7 @@ namespace samsungiot {
     {
         init();
         ManagedString result = IotService.setSwitchState(ManagedString(switchName),(int)switchState);
-        result.leakData();
+        uBit.display.scroll(result);
     }
 
     //%
@@ -145,7 +171,6 @@ namespace samsungiot {
         {
             state = true;
         }
-        result.leakData();
         return state;
     }
 
@@ -156,14 +181,14 @@ namespace samsungiot {
         init();
         ManagedString command = "sensorState/";
         command = command + sensorName;
-        ManagedString s = IotService.getSensorState(command.leakData());
+        ManagedString s = IotService.getSensorState(command);
 
         bool result = false;
         if(strcmp("active", s.toCharArray()) == 0)
         {
             result = true;
         }
-        s.leakData();
+
         return result;
     }
 };

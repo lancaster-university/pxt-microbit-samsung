@@ -22,6 +22,35 @@ namespace share {
         return enableRadio();
     }
 
+    int stringToNumber(ManagedString input)
+    {
+        ManagedString resultString = "";
+        int result = 0;
+
+        int l = input.length();
+        for(int x=0; x < l; ++x)
+        {
+            if(input.charAt(x) != '\n' && input.charAt(x) != '\r')
+            {
+                if(isdigit(input.charAt(x)) || input.charAt(x) == '.')
+                {
+                    resultString = resultString + input.charAt(x);
+                }
+                else
+                {
+                    result = -1;
+                    break;
+                }
+            }
+        }
+        if(result > -1)
+        {
+            float f = atof(resultString.toCharArray());
+            result = round(f);
+        }
+        return result;
+    }
+
     //%
     void shareData(StringData* data, StringData* name, int level)
     {
@@ -35,7 +64,8 @@ namespace share {
         {
             level = 1;
         }
-        ShareService.setShareData(data,name,level);
+        ManagedString result = ShareService.setShareData(ManagedString(data),ManagedString(name),level);
+        uBit.display.scroll(result);
     }
 
     //%
@@ -48,7 +78,6 @@ namespace share {
         command = command + "/";
         command = command + targetSchool;
         ManagedString reply = ShareService.getFetchData(command);
-        command.leakData();
         return reply.leakData();
     }
 
@@ -61,7 +90,6 @@ namespace share {
         command = command + name;
         command = command + "/local";
         ManagedString reply = ShareService.getFetchData(command);
-        command.leakData();
         return reply.leakData();
     }
 
@@ -69,9 +97,8 @@ namespace share {
     int textToNumber(StringData* text)
     {
         init();
-        ManagedString managedText = (ManagedString)text;
-        int value = (int)atof(managedText.toCharArray());
-        managedText.leakData();
+        
+        int value = stringToNumber((ManagedString)text);
         return value;
     }
 

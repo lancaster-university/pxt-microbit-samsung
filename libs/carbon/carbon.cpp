@@ -38,15 +38,42 @@ namespace carbon {
         return enableRadio();
     }
 
+    int stringToNumber(ManagedString input)
+    {
+        ManagedString resultString = "";
+        int result = 0;
+
+        int l = input.length();
+        for(int x=0; x < l; ++x)
+        {
+            if(input.charAt(x) != '\n' && input.charAt(x) != '\r')
+            {
+                if(isdigit(input.charAt(x)) || input.charAt(x) == '.')
+                {
+                    resultString = resultString + input.charAt(x);
+                }
+                else
+                {
+                    result = -1;
+                    break;
+                }
+            }
+        }
+        if(result > -1)
+        {
+            float f = atof(resultString.toCharArray());
+            result = round(f);
+        }
+        return result;
+    }
+
     //%
     int queryCarbonValue()
     {
         init();
 
-        ManagedString command = "value";
-        ManagedString reply = CarbonService.getCarbonValue(command.leakData());
-        int value = (int)atof(reply.toCharArray());
-        reply.leakData();
+        ManagedString reply = CarbonService.getCarbonValue("value");
+        int value = stringToNumber(reply);
         return value;
     }
 
@@ -58,8 +85,7 @@ namespace carbon {
     {
         init();
 
-        ManagedString command = "index";
-        ManagedString reply = CarbonService.getCarbonIndex(command.leakData());
+        ManagedString reply = CarbonService.getCarbonIndex("index");
 
         int replyValue = -1;
 
@@ -73,8 +99,6 @@ namespace carbon {
                 break;
             }
         }
-
-        reply.leakData();
         return replyValue;
     }
 
@@ -83,8 +107,7 @@ namespace carbon {
     {
         init();
 
-        ManagedString command = "index";
-        ManagedString reply = CarbonService.getCarbonIndex(command.leakData());
+        ManagedString reply = CarbonService.getCarbonIndex("index");
         return reply.leakData();
     }
 
@@ -107,13 +130,11 @@ namespace carbon {
         ManagedString command = "genmix/";
         command = command + generationTypes[mix];
         
-        ManagedString reply = CarbonService.getCarbonGenerationMix(command.leakData());
-
-        //Convert the string floating point value into an integer
-        int value = (int)atof(reply.toCharArray());
-        reply.leakData();
+        ManagedString reply = CarbonService.getCarbonGenerationMix(command);
+        int value = stringToNumber(reply);
         return value;
     }
+
 
     //%
     int setGenerationMixType(GenerationMixType GenerationMixType)

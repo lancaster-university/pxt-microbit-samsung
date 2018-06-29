@@ -207,7 +207,7 @@
     "compileService": {
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
-        "githubCorePackage": "lancaster-university/microbit",
+        "githubCorePackage": "santosh-kondu/microbit",
         "gittag": "rest-radio",
         "serviceId": "microbit"
     },

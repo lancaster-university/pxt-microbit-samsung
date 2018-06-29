@@ -20,7 +20,7 @@ namespace carbon {
         return 236;
     }
 
-    //% blockId=carbon_queryCarbonIndex block="get carbon index" weight=73
+    //% blockId=carbon_queryCarbonIndex block="get carbon index level" weight=73
     //% shim=carbon::queryCarbonIndex
     export function queryCarbonIndex(): number {
         return 1;
@@ -35,6 +35,6 @@ namespace carbon {
     //% blockId=carbon_queryCarbonGenerationMix block="get carbon generation mix|for type %mix" weight=71
     //% shim=carbon::queryCarbonGenerationMix
     export function queryCarbonGenerationMix(mix : number): number {
-        return 22;
+        return 45;
     }
 }
