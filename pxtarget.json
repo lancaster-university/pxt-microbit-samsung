@@ -11,7 +11,6 @@
         "libs/devices",
         "libs/bluetooth",
         "libs/weather",
-        "libs/cloud-variables",
         "libs/energy",
         "libs/carbon",
         "libs/share",
