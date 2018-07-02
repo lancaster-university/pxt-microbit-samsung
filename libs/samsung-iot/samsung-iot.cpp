@@ -62,6 +62,12 @@ namespace samsungiot {
     }
 
     //%
+    int setLightColour(BulbColour lightcolour)
+    {
+        return (int)lightcolour;
+    }
+
+    //%
     void setBulbState(StringData* bulbName, SwitchState switchState)
     {
         init();
@@ -148,7 +154,7 @@ namespace samsungiot {
 
         init();
         ManagedString result = IotService.getSwitchState(ManagedString(switchName));
-        if(strcmp(result.toCharArray(), "OK") == 0)
+        if(strcmp(result.toCharArray(), "on") == 0)
         {
             state = true;
         }
