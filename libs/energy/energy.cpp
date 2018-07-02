@@ -2,7 +2,7 @@
 #include "EnergyService.h"
 
 enum class EnergyType{
-    electric = 0, 
+    electricity = 0, 
     gas = 1, 
     solar = 2,
 };
@@ -51,25 +51,25 @@ namespace energy {
     }
 
     
-    StringData* queryEnergyText(int t, StringData* schoolid)
+    StringData* queryEnergyText(EnergyType t, StringData* schoolid)
     {
         init();
 
         //protect against invalid input
-        if(t < 0)
+        if(t < EnergyType::electricity)
         {
-            t = 0;
+            t = EnergyType::electricity;
         }
-        if(t > (int)EnergyType::solar)
+        if(t > EnergyType::solar)
         {
-            t = (int)EnergyType::solar;
+            t = EnergyType::solar;
         }
 
 
         ManagedString command = "energyLevel/";
         char eType[5];
         memset(eType,0,sizeof(eType));
-        sprintf(eType,"%d",t);
+        sprintf(eType,"%d",(int)t);
 
         command = command + eType;
         command = command + "/";
@@ -80,7 +80,7 @@ namespace energy {
     }
 
     //%
-    int queryEnergy(int t, StringData* schoolid)
+    int queryEnergy(EnergyType t, StringData* schoolid)
     {
         ManagedString result = queryEnergyText(t,schoolid);
         int value = stringToNumber(result);
@@ -88,24 +88,24 @@ namespace energy {
     }
 
     
-    StringData* querySchoolEnergyText(int t)
+    StringData* querySchoolEnergyText(EnergyType t)
     {
         init();
 
         //protect against invalid input
-        if(t < 0)
+        if(t < EnergyType::electricity)
         {
-            t = 0;
+            t = EnergyType::electricity;
         }
-        if(t > (int)EnergyType::solar)
+        if(t > EnergyType::solar)
         {
-            t = (int)EnergyType::solar;
+            t = EnergyType::solar;
         }
 
         ManagedString command = "energyLevel/";
         char eType[5];
         memset(eType,0,sizeof(eType));
-        sprintf(eType,"%d",t);
+        sprintf(eType,"%d",(int)t);
 
         command = command + eType;
         command = command + "/";
@@ -116,16 +116,11 @@ namespace energy {
     }
 
     //%
-    int querySchoolEnergy(int t)
+    int querySchoolEnergy(EnergyType t)
     {
         ManagedString result = querySchoolEnergyText(t);
         int value = stringToNumber(result);
         return value;
     }
 
-    //%
-    int setEnergyType(EnergyType energyType)
-    {
-        return (int)energyType;
-    }
 };

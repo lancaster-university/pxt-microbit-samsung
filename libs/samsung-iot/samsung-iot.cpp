@@ -7,15 +7,16 @@ enum class SwitchState{
 };
 
 enum class BulbColour{
-    red = 0,
-    pink,
-    lightblue,
-    blue,
-    green,
-    lightgreen,
-    orange,
-    purple,
-    white
+    soft_1 = 0,
+    level_2 = 1,
+    level_3 = 2,
+    level_4 = 3,
+    level_5 = 4,
+    level_6 = 5,
+    level_7 = 6,
+    level_8 = 7,
+    level_9 = 8,
+    daylight_10 = 9
 };
 
 /**
@@ -78,12 +79,13 @@ namespace samsungiot {
     //%
     bool getBulbState(StringData* bulbName)
     {
-        bool state = false;
+        bool state = true;
         init();
         ManagedString result = IotService.getBulbState(ManagedString(bulbName));
-        if(strcmp(result.toCharArray(), "OK") == 0)
+        uBit.display.scroll(result);
+        if(strcmp(result.toCharArray(), "0") == 0)
         {
-            state = true;
+            state = false;
         }
         return state;
     }
@@ -118,13 +120,13 @@ namespace samsungiot {
     void setBulbColour(StringData* bulbName, BulbColour colour)
     {
         init();
-        if((int)colour < (int)BulbColour::red)
+        if((int)colour < (int)BulbColour::soft_1)
         {
-            colour = BulbColour::red;
+            colour = BulbColour::soft_1;
         }
-        if((int)colour > (int)BulbColour::white)
+        if((int)colour > (int)BulbColour::daylight_10)
         {
-            colour = BulbColour::white;
+            colour = BulbColour::daylight_10;
         }
         ManagedString result = IotService.setBulbColour(ManagedString(bulbName), (int)colour);
         uBit.display.scroll(result);

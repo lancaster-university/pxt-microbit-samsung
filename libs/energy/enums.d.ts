@@ -2,7 +2,7 @@
 
 
     declare const enum EnergyType {
-    electric = 0,
+    electricity = 0,
     gas = 1,
     solar = 2,
     }

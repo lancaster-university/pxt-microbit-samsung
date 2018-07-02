@@ -1,16 +1,9 @@
 //% color=#004d00 weight=100 icon="\uf3fd" block="share"
 namespace share {
 
-
-    //% blockId=share_setShareLevel block="share level %ShareLevel" weight=54
-    //% shim=share::setShareLevel
-    export function setShareLevel(sharelevel:ShareLevel): number {
-        return sharelevel;
-    }
-
     //% blockId=share_shareData block="share data %data |called %name |with %level" weight=53
     //% shim=share::shareData
-    export function shareData(data:string, name:string, level:number): void {
+    export function shareData(data:string, name:string, level:ShareLevel): void {
         //basic.showString("OK");
         basic.showIcon(IconNames.Yes);
         return;
