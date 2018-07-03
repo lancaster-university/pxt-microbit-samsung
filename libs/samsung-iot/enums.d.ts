@@ -8,15 +8,16 @@
 
 
     declare const enum BulbColour {
-    red = 0,
-    pink = 1,
-    lightblue = 2,
-    blue = 3,
-    green = 4,
-    lightgreen = 5,
-    orange = 6,
-    purple = 7,
-    white = 8,
+    soft_1 = 0,
+    level_2 = 1,
+    level_3 = 2,
+    level_4 = 3,
+    level_5 = 4,
+    level_6 = 5,
+    level_7 = 6,
+    level_8 = 7,
+    level_9 = 8,
+    daylight_10 = 9,
     }
 declare namespace samsungiot {
 }

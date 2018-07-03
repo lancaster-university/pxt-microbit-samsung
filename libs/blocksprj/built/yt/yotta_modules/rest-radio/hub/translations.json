@@ -307,12 +307,6 @@
                             "name":"schoolid",
                             "type":"string"
                         }
-                    ],
-                    "returns":[
-                        {
-                            "type":"string",
-                            "name":"result"
-                        }
                     ]
                 },
                 "piId":{
@@ -320,12 +314,6 @@
                         {
                             "name":"piid",
                             "type":"string"
-                        }
-                    ],
-                    "returns":[
-                        {
-                            "type":"string",
-                            "name":"result"
                         }
                     ]
                 }

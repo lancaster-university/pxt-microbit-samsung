@@ -7,6 +7,7 @@
         "energy": "file:../energy",
         "carbon": "file:../carbon",
         "share": "file:../share",
+        "iss": "file:../iss",
         "initialize": "file:../initialize",
         "samsung-iot": "file:../samsung-iot"
     },

@@ -1,6 +1,6 @@
 {
-    "name": "samsung-iot",
-    "description": "The Samsung IoT library",
+    "name": "iss",
+    "description": "The iss library",
     "version": "0.0.1",
     "license": "MIT",
     "dependencies": {
@@ -10,8 +10,8 @@
         "test.ts"
     ],
     "files": [
-        "samsung-iot.cpp",
-        "samsung-iot.ts",
+        "iss.cpp",
+        "iss.ts",
         "shims.d.ts",
         "enums.d.ts",
         "README.md"
@@ -32,5 +32,5 @@
             }
         }
     },
-    "installedVersion": "file:../samsung-iot"
+    "installedVersion": "file:../iss"
 }

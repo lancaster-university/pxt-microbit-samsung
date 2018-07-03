@@ -52,19 +52,19 @@ namespace share {
     }
 
     //%
-    void shareData(StringData* data, StringData* name, int level)
+    void shareData(StringData* data, StringData* name, ShareLevel level)
     {
         init();
         //This forces the input to be either a 1 or 0. Anything else becomes a 1 (school)
-        if(level == (int)ShareLevel::all)
+        if(level == ShareLevel::all)
         {
-            level = 0;
+            level = ShareLevel::all;
         }
         else
         {
-            level = 1;
+            level = ShareLevel::school;
         }
-        ManagedString result = ShareService.setShareData(ManagedString(data),ManagedString(name),level);
+        ManagedString result = ShareService.setShareData(ManagedString(data),ManagedString(name),(int)level);
         uBit.display.scroll(result);
     }
 
@@ -113,11 +113,4 @@ namespace share {
         return ManagedString(buffer).leakData();
     }
 
-    //%
-    int setShareLevel(ShareLevel level)
-    {
-        return (int)level;
-    }
-
-    
 };

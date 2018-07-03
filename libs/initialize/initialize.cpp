@@ -21,12 +21,12 @@ namespace initialize {
     }
 
     //%
-    void initUnit(StringData* initData, int t)
+    void initUnit(StringData* initData, InitType t)
     {
         init();
 
         ManagedString result;
-        if(t == (int)InitType::school)
+        if(t == InitType::school)
         {
             result = InitService.setSchoolId(ManagedString(initData));
         }
@@ -35,11 +35,5 @@ namespace initialize {
             result = InitService.setPiId(ManagedString(initData));
         }
         uBit.display.scroll(result);
-    }
-
-    //%
-    int setInitType(InitType initType)
-    {
-        return (int)initType;
     }
 };
