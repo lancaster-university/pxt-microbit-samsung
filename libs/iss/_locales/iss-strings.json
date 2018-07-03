@@ -1,0 +1,11 @@
+{
+  "iss.getAltitude|block": "ISS altitude",
+  "iss.getDayNum|block": "ISS day number",
+  "iss.getId|block": "ISS ID",
+  "iss.getLocation|block": "ISS location",
+  "iss.getName|block": "ISS name",
+  "iss.getSolarLocation|block": "ISS solar location",
+  "iss.getVelocity|block": "ISS velocity",
+  "iss.getVisability|block": "ISS solar visability",
+  "{id:category}Iss": "Iss"
+}
