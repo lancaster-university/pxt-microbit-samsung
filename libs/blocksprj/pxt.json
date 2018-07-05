@@ -2,7 +2,14 @@
     "name": "{0} block",
     "dependencies": {
         "core": "file:../core",
-        "radio": "file:../radio"
+        "weather": "file:../weather",
+        "radio": "file:../radio",
+        "energy": "file:../energy",
+        "carbon": "file:../carbon",
+        "share": "file:../share",
+        "iss": "file:../iss",
+        "initialize": "file:../initialize",
+        "samsung-iot": "file:../samsung-iot"
     },
     "description": "",
     "files": [

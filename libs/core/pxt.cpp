@@ -4,6 +4,20 @@
 MicroBit uBit;
 
 namespace pxt {
+
+    bool radioEnabled = false;
+    int enableRadio()
+    {
+        if (!radioEnabled)
+        {
+            uBit.radio.setGroup(0);
+            uBit.radio.enable();
+            radioEnabled = true;
+        }
+
+        return MICROBIT_OK;
+    }
+
     int incr(uint32_t e)
     {
       if (e) {

@@ -1,0 +1,34 @@
+{
+    "name": "initialize",
+    "description": "The initialize IoT library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {},
+    "testFiles": [
+        "test.ts"
+    ],
+    "files": [
+        "initialize.cpp",
+        "initialize.ts",
+        "shims.d.ts",
+        "enums.d.ts",
+        "README.md"
+    ],
+    "public": true,
+    "yotta": {
+        "dependencies": {
+            "rest-radio": "santosh-kondu/rest-radio/#master"
+        },
+        "config": {
+            "microbit-dal": {
+                "radio": {
+                    "version": "MICROBIT_RADIO_MODIFIED"
+                },
+                "bluetooth": {
+                    "enabled": 0
+                }
+            }
+        }
+    },
+    "installedVersion": "file:../initialize"
+}

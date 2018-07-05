@@ -46,16 +46,7 @@ namespace radio {
     BufferData* bufMsg; // may be NULL before first packet
 
     int radioEnable() {
-        int r = uBit.radio.enable();
-        if (r != MICROBIT_OK) {
-            uBit.panic(43);
-            return r;
-        }
-        if (!radioEnabled) {
-            uBit.radio.setGroup(pxt::programHash());
-            radioEnabled = true;
-        }
-        return r;
+        enableRadio();
     }
 
     void broadcastMessage(int message) {
@@ -114,7 +105,7 @@ namespace radio {
             memcpy(buf + 1, s.getBytes(), len);
         }
         return len + 1;
-    }    
+    }
 
     BufferData* getBufferValue(uint8_t* buf, uint8_t maxLength) {
         // First byte is the buffer length

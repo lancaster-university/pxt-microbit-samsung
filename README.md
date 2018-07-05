@@ -1,6 +1,15 @@
 # micro:bit target for PXT
 
-This target allows you to program a [BBC micro:bit](https://microbit.org/) using 
+## For those trying to locally host cloud-variables and REST APIs...
+
+To obtain the weather and cloud-variable packages, please run `git submodule init`, followed by `git submodule update`. In each `libs/weather` and `libs/cloud-variables` run pxt install after performing the installation instructions below. Once complete, run `pxt serve` this should result in a MakeCode editor with the Cloud Variable and Weather packages included.
+
+To add your own packages to MakeCode, please read: https://makecode.com/packages/getting-started and model your new packages on those I've already implemented. A key step is to add your package to `bundleddirs` array in `pxttarget.json`.
+
+
+## Introduction
+
+This target allows you to program a [BBC micro:bit](https://microbit.org/) using
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
 * [Try it live](https://makecode.microbit.org)
@@ -15,9 +24,9 @@ Please add an issue if you discover an (unreported) bug.
 
 The local server lets you to run the editor and serve the documentation from your own computer.
 
-### Setup   
-This section explains how to setup your development environment for pxt-microbit, whether that be to run a copy locally or to make source changes.    
-Note that pxt-microbit can not be run without its main depandancy, [pxt](https://github.com/Microsoft/pxt). Below explains how to setup both.      
+### Setup
+This section explains how to setup your development environment for pxt-microbit, whether that be to run a copy locally or to make source changes.
+Note that pxt-microbit can not be run without its main depandancy, [pxt](https://github.com/Microsoft/pxt). Below explains how to setup both.
 
 The following commands perform a one-time setup after synching the repo on your machine.
 * Note for any editing of the .cpp files, Yotta must be installed. Do do so, follow the instructions on [their site](http://docs.yottabuild.org/).
@@ -62,7 +71,7 @@ npm install
 ```
 npm link ../pxt
 ```
-Note the above command assumes the folder structure of   
+Note the above command assumes the folder structure of
 ```
        makecode
           |
@@ -77,7 +86,7 @@ Run this command from inside pxt-microbit to open a local web server (add ``sudo
 ```
 pxt serve --cloud
 ```
-If the local server opens in the wrong browser, make sure to copy the URL containing the local token. 
+If the local server opens in the wrong browser, make sure to copy the URL containing the local token.
 Otherwise, the editor will not be able to load the projects.
 
 If you need modify the `.cpp` files (and have installed yotta), enable yotta compilation by removing the ```--cloud``` flag (add ``sudo`` for Mac/Linux shells):
@@ -94,7 +103,7 @@ pxt update
 
 More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost
 
-## Repos 
+## Repos
 
 The pxt-microbit target depends on several other repos. The main ones are:
 - https://github.com/Microsoft/pxt, the PXT framework

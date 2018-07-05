@@ -9,7 +9,14 @@
         "libs/core",
         "libs/radio",
         "libs/devices",
-        "libs/bluetooth"
+        "libs/bluetooth",
+        "libs/weather",
+        "libs/energy",
+        "libs/carbon",
+        "libs/share",
+        "libs/iss",
+        "libs/initialize",
+        "libs/samsung-iot"
     ],
     "cloud": {
         "workspace": false,
@@ -25,7 +32,7 @@
         "isNative": false,
         "hasHex": true,
         "deployDrives": "(MICROBIT|MBED)",
-        "driveName": "MICROBIT",
+        "driveName": "asdasdasdasdasd",
         "hexMimeType": "application/x-microbit-hex",
         "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
         "flashUsableEnd": 245760,
@@ -200,8 +207,8 @@
     "compileService": {
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
-        "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.0.0-rc11",
+        "githubCorePackage": "santosh-kondu/microbit",
+        "gittag": "rest-radio",
         "serviceId": "microbit"
     },
     "serial": {
@@ -220,8 +227,8 @@
             ]
         },
         "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
-        "vendorId": "0x0d28",
-        "productId": "0x0204",
+        "vendorId": "0x0asdasdd28",
+        "productId": "0xasdasd0204",
         "rawHID": true
     },
     "appTheme": {
