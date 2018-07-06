@@ -112,23 +112,23 @@ namespace carbon {
     }
 
     //%
-    int queryCarbonGenerationMix(int mix)
+    int queryCarbonGenerationMix(GenerationMixType mix)
     {
         init();
 
         //Check the input value bounds
-        if(mix < 0)
+        if(mix < GenerationMixType::gas)
         {
-            mix = 0;
+            mix = GenerationMixType::gas;
         }
 
-        if(mix > (int)GenerationMixType::other)
+        if(mix > GenerationMixType::other)
         {
-            mix = (int)GenerationMixType::other;
+            mix = GenerationMixType::other;
         }
                
         ManagedString command = "genmix/";
-        command = command + generationTypes[mix];
+        command = command + generationTypes[(int)mix];
         
         ManagedString reply = CarbonService.getCarbonGenerationMix(command);
         int value = stringToNumber(reply);
