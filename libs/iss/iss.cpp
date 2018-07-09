@@ -1,12 +1,12 @@
 #include "pxt.h"
-//#include "IssService.h"
+#include "IssService.h"
 
 /**
 * share
 * use
 */
 
-//IssService IssService(uBit.radio);
+IssService IssService(uBit.radio);
 
 //% color=#99ccff weight=100 icon="\uf197" block="ISS"
 namespace iss {
@@ -56,8 +56,9 @@ namespace iss {
     int getId()
     {
         init();
-        int result = IssService.getId("id");
-        return result;
+        ManagedString result = IssService.getId("id");
+        int value = stringToNumber(result);
+        return value;
     }
 
 
@@ -73,7 +74,7 @@ namespace iss {
     StringData* getSolarLocation()
     {
         init();
-        ManagedString result = IssService.getSolarLocation("solarlocation");
+        ManagedString result = IssService.getSolarlocation("solarlocation");
         return result.leakData();
     }
 
@@ -81,16 +82,18 @@ namespace iss {
     int getVelocity()
     {
         init();
-        int result = IssService.getVelocity("velocity");
-        return result;
+        ManagedString result = IssService.getVelocity("velocity");
+        int value = stringToNumber(result);
+        return value;
     }
 
     //%
     int getAltitude()
     {
         init();
-        int result = IssService.getAltitude("altitude");
-        return result;
+        ManagedString result = IssService.getAltitude("altitude");
+        int value = stringToNumber(result);
+        return value;
     }
 
     //%
@@ -105,7 +108,8 @@ namespace iss {
     int getDayNum()
     {
         init();
-        int result = IssService.getDaynumber("daynumber");
-        return result;
+        ManagedString result = IssService.getDaynumber("daynumber");
+        int value = stringToNumber(result);
+        return value;
     }
 };
