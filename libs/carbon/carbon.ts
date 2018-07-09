@@ -34,7 +34,7 @@ namespace carbon {
 
     //% blockId=carbon_queryCarbonGenerationMix block="get carbon generation mix|for type %mix" weight=71
     //% shim=carbon::queryCarbonGenerationMix
-    export function queryCarbonGenerationMix(mix : number): number {
+    export function queryCarbonGenerationMix(mix : GenerationMixType): number {
         return 45;
     }
 }
