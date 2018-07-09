@@ -1,7 +1,7 @@
 {
     "name": "core",
     "description": "The microbit core library",
-    "installedVersion": "tsmdvf",
+    "installedVersion": "file:../core",
     "files": [
         "README.md",
         "ManagedBuffer.cpp",

@@ -2,7 +2,7 @@
     "weather":{
         "GET" : {
             "apiPrefix":"get",
-            "baseURL":"http://query.yahooapis.com/v1/public/yql",
+            "baseURL":"http://query.yahoooapis.com/v1/public/yql",
             "queryObject":{
                 "q":"select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='%location%') and u='%unit?=c%'",
                 "format":"json"
@@ -276,7 +276,7 @@
     "energy":{
         "GET" : {
             "apiPrefix":"get",
-            "baseURL":"http://global-logic.com/api/v1/devices/",
+            "baseURL":"http://stag.p3htji6rui.eu-west-2.elasticbeanstalk.com/api/v1/micro-bit/energy/",
             "microbitQueryString":"/%endpoint%/%unit?%",
             "compulsoryParameters":[
                 {
@@ -307,12 +307,6 @@
                             "name":"schoolid",
                             "type":"string"
                         }
-                    ],
-                    "returns":[
-                        {
-                            "type":"string",
-                            "name":"result"
-                        }
                     ]
                 },
                 "piId":{
@@ -320,12 +314,6 @@
                         {
                             "name":"piid",
                             "type":"string"
-                        }
-                    ],
-                    "returns":[
-                        {
-                            "type":"string",
-                            "name":"result"
                         }
                     ]
                 }
@@ -374,7 +362,7 @@
     "share":{
         "GET" : {
             "apiPrefix":"get",
-            "baseURL":"http://stag.p3htji6rui.eu-west-2.elasticbeanstalk.com/api/v1/variables/varname/",
+            "baseURL":"http://stag.p3htji6rui.eu-west-2.elasticbeanstalk.com/api/v1/micro-bit/variables/",
             "microbitQueryString":"/%endpoint%/%unit?%",
             "compulsoryParameters":[
                 {
@@ -395,7 +383,7 @@
         },
         "POST" : {
             "apiPrefix":"set",
-            "baseURL":"http://stag.p3htji6rui.eu-west-2.elasticbeanstalk.com/api/v1/variables/",
+            "baseURL":"http://stag.p3htji6rui.eu-west-2.elasticbeanstalk.com/api/v1/micro-bit/variables/",
             "microbitQueryString":"/%endpoint%/",
             "endpoint":{
                 "shareData":{
@@ -417,6 +405,85 @@
                         {
                             "type":"string",
                             "name":"result"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "iss":{
+        "GET" : {
+            "apiPrefix":"get",
+            "baseURL":"https://api.wheretheiss.at/v1/satellites/25544/",
+            "microbitQueryString":"/%endpoint%/%unit?%",
+            "compulsoryParameters":[
+                {
+                    "name":"endpoint",
+                    "type":"string"
+                }
+            ],
+            "endpoint":{
+                "name":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "id":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "location":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "solarlocation":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "velocity":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "altitude":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "visability":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
+                        }
+                    ]
+                },
+                "daynumber":{
+                    "returns":[
+                        {
+                            "type":"string",
+                            "name":"data"
                         }
                     ]
                 }

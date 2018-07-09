@@ -48,7 +48,7 @@ namespace iss {
     StringData* getName()
     {
         init();
-        ManagedString result = "ISS"; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        ManagedString result = IssService.getName("name");
         return result.leakData();
     }
 
@@ -56,7 +56,7 @@ namespace iss {
     int getId()
     {
         init();
-        int result = 25544; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        int result = IssService.getId("id");
         return result;
     }
 
@@ -65,7 +65,7 @@ namespace iss {
     StringData* getLocation()
     {
         init();
-        ManagedString result = "LAT:-6.3547249173764 LON:43.523139793007s"; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        ManagedString result = IssService.getLocation("location");
         return result.leakData();
     }
 
@@ -73,7 +73,7 @@ namespace iss {
     StringData* getSolarLocation()
     {
         init();
-        ManagedString result = "LAT:22.940300269597 LON:23.264864291413"; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        ManagedString result = IssService.getSolarLocation("solarlocation");
         return result.leakData();
     }
 
@@ -81,7 +81,7 @@ namespace iss {
     int getVelocity()
     {
         init();
-        int result = 27606; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        int result = IssService.getVelocity("velocity");
         return result;
     }
 
@@ -89,7 +89,7 @@ namespace iss {
     int getAltitude()
     {
         init();
-        int result = 405; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        int result = IssService.getAltitude("altitude");
         return result;
     }
 
@@ -97,7 +97,7 @@ namespace iss {
     StringData* getVisability()
     {
         init();
-        ManagedString result = "daylight"; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        ManagedString result = IssService.getVisability("visability");
         return result.leakData();
     }
 
@@ -105,7 +105,7 @@ namespace iss {
     int getDayNum()
     {
         init();
-        int result = 2458302; //IssService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        int result = IssService.getDaynumber("daynumber");
         return result;
     }
 };
