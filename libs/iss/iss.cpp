@@ -97,10 +97,10 @@ namespace iss {
     }
 
     //%
-    StringData* getVisability()
+    StringData* getVisibility()
     {
         init();
-        ManagedString result = IssService.getVisability("visability");
+        ManagedString result = IssService.getVisibility("visibility");
         return result.leakData();
     }
 
@@ -108,7 +108,7 @@ namespace iss {
     int getDayNum()
     {
         init();
-        ManagedString result = IssService.getDaynumber("daynumber");
+        ManagedString result = IssService.getDaynum("daynum");
         int value = stringToNumber(result);
         return value;
     }

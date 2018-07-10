@@ -37,9 +37,9 @@ namespace iss {
         return 405;
     }
 
-    //% blockId=iss_getVisability block="ISS solar visability" weight=53
-    //% shim=iss::getVisability
-    export function getVisability(): string {
+    //% blockId=iss_getVisibility block="ISS solar isibility" weight=53
+    //% shim=iss::getVisibility
+    export function getVisibility(): string {
         return "daylight";
     }
 
