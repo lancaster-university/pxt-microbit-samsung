@@ -50,7 +50,7 @@ namespace energy {
         return result;
     }
 
-    
+    //%
     StringData* queryEnergyText(EnergyType t, StringData* schoolid)
     {
         init();
@@ -64,7 +64,6 @@ namespace energy {
         {
             t = EnergyType::solar;
         }
-
 
         ManagedString command = "energyLevel/";
         char eType[5];
@@ -87,7 +86,7 @@ namespace energy {
         return value;
     }
 
-    
+    //%
     StringData* querySchoolEnergyText(EnergyType t)
     {
         init();
