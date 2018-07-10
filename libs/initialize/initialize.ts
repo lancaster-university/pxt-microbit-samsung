@@ -6,4 +6,9 @@ namespace initialize {
     //% shim=initialize::initUnit
     export function initUnit(id:string, t: InitType) {
     }
+
+    //% blockId=initialize_resetUnit block="clear initialisation" weight=93
+    //% shim=initialize::resetUnit
+    export function resetUnit() {
+    }
 }

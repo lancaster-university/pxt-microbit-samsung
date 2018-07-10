@@ -15,35 +15,6 @@ namespace iss {
         return enableRadio();
     }
 
-    int stringToNumber(ManagedString input)
-    {
-        ManagedString resultString = "";
-        int result = 0;
-
-        int l = input.length();
-        for(int x=0; x < l; ++x)
-        {
-            if(input.charAt(x) != '\n' && input.charAt(x) != '\r')
-            {
-                if(isdigit(input.charAt(x)) || input.charAt(x) == '.')
-                {
-                    resultString = resultString + input.charAt(x);
-                }
-                else
-                {
-                    result = -1;
-                    break;
-                }
-            }
-        }
-        if(result > -1)
-        {
-            float f = atof(resultString.toCharArray());
-            result = round(f);
-        }
-        return result;
-    }
-
     //%
     StringData* getName()
     {
@@ -56,9 +27,8 @@ namespace iss {
     int getId()
     {
         init();
-        ManagedString result = IssService.getId("id");
-        int value = stringToNumber(result);
-        return value;
+        int result = IssService.getId("id");
+        return result;
     }
 
 
@@ -82,25 +52,23 @@ namespace iss {
     int getVelocity()
     {
         init();
-        ManagedString result = IssService.getVelocity("velocity");
-        int value = stringToNumber(result);
-        return value;
+        int result = IssService.getVelocity("velocity");
+        return result;
     }
 
     //%
     int getAltitude()
     {
         init();
-        ManagedString result = IssService.getAltitude("altitude");
-        int value = stringToNumber(result);
-        return value;
+        int result = IssService.getAltitude("altitude");
+        return result;
     }
 
     //%
-    StringData* getVisability()
+    StringData* getVisibility()
     {
         init();
-        ManagedString result = IssService.getVisability("visability");
+        ManagedString result = IssService.getVisibility("visibility");
         return result.leakData();
     }
 
@@ -108,8 +76,7 @@ namespace iss {
     int getDayNum()
     {
         init();
-        ManagedString result = IssService.getDaynumber("daynumber");
-        int value = stringToNumber(result);
-        return value;
+        int result = IssService.getDaynum("daynum");
+        return result;
     }
 };

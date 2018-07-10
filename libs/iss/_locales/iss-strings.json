@@ -6,6 +6,6 @@
   "iss.getName|block": "ISS name",
   "iss.getSolarLocation|block": "ISS solar location",
   "iss.getVelocity|block": "ISS velocity",
-  "iss.getVisability|block": "ISS solar visability",
+  "iss.getVisibility|block": "ISS solar visibility",
   "{id:category}Iss": "Iss"
 }
