@@ -36,4 +36,13 @@ namespace initialize {
         }
         uBit.display.scroll(result);
     }
+
+    //%
+    void resetUnit()
+    {
+        init();
+        ManagedString result;
+        result = InitService.setSchoolId(ManagedString("reset"));
+        uBit.display.scroll(result);
+    }
 };
