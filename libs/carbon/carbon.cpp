@@ -71,7 +71,6 @@ namespace carbon {
     int queryCarbonValue()
     {
         init();
-
         ManagedString reply = CarbonService.getCarbonValue("value");
         int value = stringToNumber(reply);
         return value;
@@ -115,7 +114,6 @@ namespace carbon {
     int queryCarbonGenerationMix(GenerationMixType mix)
     {
         init();
-
         //Check the input value bounds
         if(mix < GenerationMixType::gas)
         {

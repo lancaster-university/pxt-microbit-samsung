@@ -6,7 +6,7 @@ enum class SwitchState{
     on = 1
 };
 
-enum class BulbColour{
+enum class BulbTemp{
     soft_1 = 0,
     level_2 = 1,
     level_3 = 2,
@@ -17,6 +17,17 @@ enum class BulbColour{
     level_8 = 7,
     level_9 = 8,
     daylight_10 = 9
+};
+
+enum class BulbColour{
+    white = 0,
+    red = 1,
+    orange = 2,
+    yellow = 3,
+    green = 4,
+    blue = 5,
+    purple = 6,
+    violet = 7
 };
 
 /**
@@ -60,6 +71,12 @@ namespace samsungiot {
             result = round(f);
         }
         return result;
+    }
+
+    //%
+    int setTempColour(BulbTemp colourTemp)
+    {
+        return (int)colourTemp;
     }
 
     //%
@@ -117,23 +134,48 @@ namespace samsungiot {
     }
 
     //%
+    void setBulbTemp(StringData* bulbName, BulbTemp colour)
+    {
+        init();
+        if((int)colour < (int)BulbTemp::soft_1)
+        {
+            colour = BulbTemp::soft_1;
+        }
+        if((int)colour > (int)BulbTemp::daylight_10)
+        {
+            colour = BulbTemp::daylight_10;
+        }
+        ManagedString result = IotService.setBulbTemp(ManagedString(bulbName), (int)colour);
+        uBit.display.scroll(result);
+    }
+
+    //%
     void setBulbColour(StringData* bulbName, BulbColour colour)
     {
         init();
-        if((int)colour < (int)BulbColour::soft_1)
+        if((int)colour < (int)BulbColour::white)
         {
-            colour = BulbColour::soft_1;
+            colour = BulbColour::white;
         }
-        if((int)colour > (int)BulbColour::daylight_10)
+        if((int)colour > (int)BulbColour::violet)
         {
-            colour = BulbColour::daylight_10;
+            colour = BulbColour::violet;
         }
         ManagedString result = IotService.setBulbColour(ManagedString(bulbName), (int)colour);
         uBit.display.scroll(result);
     }
 
     //%
-    int getBulbColor(StringData* bulbName)
+    int getBulbTemp(StringData* bulbName)
+    {
+        init();
+        ManagedString result = IotService.getBulbTemp(ManagedString(bulbName));
+        int temp = stringToNumber(result);
+        return temp;
+    }
+
+    //%
+    int getBulbColour(StringData* bulbName)
     {
         init();
         ManagedString result = IotService.getBulbColour(ManagedString(bulbName));
