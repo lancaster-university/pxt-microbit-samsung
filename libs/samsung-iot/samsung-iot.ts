@@ -2,7 +2,13 @@
 namespace samsungiot {
 
 
-    //% blockId=samsungiot_setLightColour block="colour temperature %colour" weight=66
+    //% blockId=samsungiot_setTempColour block="colour temperature %colour" weight=66
+    //% shim=samsungiot::setTempColour
+    export function setTempColour(colourTemp:BulbTemp): number {
+        return colourTemp;
+    }
+
+    //% blockId=samsungiot_setLightColour block="colour %colour" weight=66
     //% shim=samsungiot::setLightColour
     export function setLightColour(lightcolour:BulbColour): number {
         return lightcolour;
@@ -26,7 +32,13 @@ namespace samsungiot {
         return 30;
     }
 
-    //% blockId=samsungiot_getBulbColour block="get bulb colour temperature %name" weight=62
+    //% blockId=samsungiot_getBulbTemp block="get bulb colour temperature %name" weight=62
+    //% shim=samsungiot::getBulbTemp
+    export function getBulbTemp(name:string): number {
+        return 3;
+    }
+
+    //% blockId=samsungiot_getBulbColour block="get bulb colour  %name" weight=62
     //% shim=samsungiot::getBulbColour
     export function getBulbColour(name:string): number {
         return 3;
@@ -38,7 +50,13 @@ namespace samsungiot {
         return;
     }
 
-    //% blockId=samsungiot_setBulbColour block="turn bulb| %name |to colour temperature %colour" weight=58
+    //% blockId=samsungiot_setBulbTemp block="turn bulb| %name |to colour temperature %colour" weight=58
+    //% shim=samsungiot::setBulbTemp
+    export function setBulbTemp(name:string, colour: BulbTemp): void{
+        return;
+    }
+
+    //% blockId=samsungiot_setBulbColour block="turn bulb| %name |to colour  %colour" weight=58
     //% shim=samsungiot::setBulbColour
     export function setBulbColour(name:string, colour: BulbColour): void{
         return;
