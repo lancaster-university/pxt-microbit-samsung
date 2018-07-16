@@ -1,6 +1,6 @@
 [submodule "libs/weather"]
 	path = libs/weather
-	url = https://github.com/lancaster-university/samsung-weather.git
+	url = https://github.com/santosh-kondu/samsung-weather.git
 [submodule "libs/cloud-variables"]
 	path = libs/cloud-variables
-	url = https://github.com/lancaster-university/cloud-variables.git
+	url = https://github.com/santosh-kondu/cloud-variables.git
