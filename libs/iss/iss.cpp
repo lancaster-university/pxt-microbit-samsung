@@ -98,10 +98,7 @@ namespace iss {
         time_t launchDate, today; 
     
         launchDate  = (timeFromDate( 1998, 11, 20 )) /86400; 
-        //end_date     =   timeFromDate( 2018, 7, 12 );
         today = IssService.getDaynum("daynum");
-        //today = 17724;
-    
         int days = difftime( today, launchDate); // / 86400; 
         return days;
     }

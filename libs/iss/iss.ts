@@ -46,6 +46,6 @@ namespace iss {
     //% blockId=iss_getDayNum block="ISS day number" weight=53
     //% shim=iss::getDayNum
     export function getDayNum(): number {
-        return 2458302;
+        return 17728;
     }
 }
