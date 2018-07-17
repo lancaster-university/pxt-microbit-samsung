@@ -99,7 +99,7 @@ namespace iss {
     
         launchDate  = (timeFromDate( 1998, 11, 20 )) /86400; 
         today = IssService.getDaynum("daynum");
-        int days = difftime( today, launchDate); // / 86400; 
+        int days = difftime( today, launchDate); 
         return days;
     }
 };

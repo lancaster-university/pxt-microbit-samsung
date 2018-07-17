@@ -5,42 +5,13 @@ namespace energy {
     //% shim=energy::queryEnergy
     export function queryEnergy(t: EnergyType, schoolid:string): number 
     {
-        if(t == EnergyType.electricity)
-        {
-            return 33;
-        }
-        if(t == EnergyType.gas)
-        {
-            return 33;
-        }
-        if(t == EnergyType.solar)
-        {
-            return 33;
-        }
-        else
-        {
-            return 33;
-        }
+        return Math.random(900) + 100;
     }
 
     //% blockId=energy_querySchoolEnergy block="get energy level|for %t |for my school" weight=84
     //% shim=energy::querySchoolEnergy
-    export function querySchoolEnergy(t: EnergyType): number {
-        if(t == EnergyType.electricity)
-        {
-            return 33;
-        }
-        if(t == EnergyType.gas)
-        {
-            return 33;
-        }
-        if(t == EnergyType.solar)
-        {
-            return 33;
-        }
-        else
-        {
-            return 33;
-        }
+    export function querySchoolEnergy(t: EnergyType): number 
+    {
+        return Math.random(900) + 100;
     }
 }

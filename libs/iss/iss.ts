@@ -1,4 +1,5 @@
 //% color=#99ccff weight=100 icon="\uf197" block="ISS"
+
 namespace iss {
 
     //% blockId=iss_getName block="ISS name" weight=53
@@ -28,19 +29,27 @@ namespace iss {
     //% blockId=iss_getVelocity block="ISS velocity" weight=53
     //% shim=iss::getVelocity
     export function getVelocity(): number {
-        return 27606;
+        return Math.random(3000) + 26500;
     }
 
     //% blockId=iss_getAltitude block="ISS altitude" weight=53
     //% shim=iss::getAltitude
     export function getAltitude(): number {
-        return 405;
+        return Math.random(60) + 380;
     }
 
     //% blockId=iss_getVisibility block="ISS solar visibility" weight=53
     //% shim=iss::getVisibility
     export function getVisibility(): string {
-        return "daylight";
+
+        if(Math.randomBoolean() == true)
+        {
+            return "daylight";
+        }
+        else
+        {
+            return "eclipsed";
+        }
     }
 
     //% blockId=iss_getDayNum block="ISS day number" weight=53
