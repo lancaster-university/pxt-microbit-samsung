@@ -126,7 +126,7 @@ namespace samsungiot {
             level = 100;
         }
 
-        ManagedString result = IotService.setBulbVal(ManagedString(bulbName), level);
+        ManagedString result = IotService.setBulbLevel(ManagedString(bulbName), level);
         uBit.display.scroll(result);
     }
 
