@@ -143,23 +143,6 @@ namespace samsungiot {
     }
 
     //%
-    void setBulbTemp(StringData* bulbName, BulbTemp colour)
-    {
-        init();
-        if((int)colour < (int)BulbTemp::soft_1)
-        {
-            colour = BulbTemp::soft_1;
-        }
-        if((int)colour > (int)BulbTemp::daylight_10)
-        {
-            colour = BulbTemp::daylight_10;
-        }
-
-        ManagedString result = IotService.setBulbTemp(ManagedString(bulbName), (int)colour);
-        uBit.display.scroll(result);
-    }
-
-    //%
     void setBulbColour(StringData* bulbName, BulbColour colour)
     {
         init();
@@ -186,6 +169,35 @@ namespace samsungiot {
         ManagedString result = IotService.getBulbTemp(command);
         int temp = stringToNumber(result);
         return temp;
+    }
+
+    //%
+    void setBulbTemp(StringData* bulbName, BulbTemp colour)
+    {
+        init();
+        if((int)colour < (int)BulbTemp::soft_1)
+        {
+            colour = BulbTemp::soft_1;
+        }
+        if((int)colour > (int)BulbTemp::daylight_10)
+        {
+            colour = BulbTemp::daylight_10;
+        }
+
+        ManagedString result = IotService.setBulbTemp(ManagedString(bulbName), (int)colour);
+        uBit.display.scroll(result);
+    }
+
+    //%
+    void setBulbNextTemp(StringData* bulbName)
+    {
+        int value = getBulbTemp(bulbName);
+        ++value;
+        if(value > (int)BulbTemp::daylight_10)
+        {
+            value = (int)BulbTemp::soft_1;
+        }
+        setBulbTemp(bulbName,(BulbTemp)value);
     }
 
     //%
