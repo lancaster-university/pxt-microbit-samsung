@@ -1,6 +1,6 @@
 [submodule "libs/weather"]
 	path = libs/weather
-	url = https://github.com/santosh-kondu/samsung-weather.git
+	url = https://GL-Kondu-Token:E3-Jyh5ppVsN7-P4B6yX@portal-ua.globallogic.com/gitlab/rohit.ail/microbit-weather.git
 [submodule "libs/cloud-variables"]
 	path = libs/cloud-variables
 	url = https://github.com/santosh-kondu/cloud-variables.git
