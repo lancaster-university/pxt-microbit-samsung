@@ -1,11 +1,3 @@
-# micro:bit target for PXT
-
-## For those trying to locally host cloud-variables and REST APIs...
-
-To obtain the weather and cloud-variable packages, please run `git submodule init`, followed by `git submodule update`. In each `libs/weather` and `libs/cloud-variables` run pxt install after performing the installation instructions below. Once complete, run `pxt serve` this should result in a MakeCode editor with the Cloud Variable and Weather packages included.
-
-To add your own packages to MakeCode, please read: https://makecode.com/packages/getting-started and model your new packages on those I've already implemented. A key step is to add your package to `bundleddirs` array in `pxttarget.json`.
-
 
 ## Introduction
 
@@ -54,7 +46,7 @@ cd ../
 
 * [Clone this repo](https://help.github.com/articles/cloning-a-repository/) to your computer.
 ```
-git clone https://github.com/microsoft/pxt-microbit
+git clone https://portal-ua.globallogic.com/gitlab/rohit.ail/pxt-microbit.git
 cd pxt-microbit
 ```
 * install the PXT command line (add ``sudo`` for Mac/Linux shells).
@@ -79,6 +71,15 @@ Note the above command assumes the folder structure of
   |               |
  pxt        pxt-microbit
  ```
+
+# micro:bit target for PXT
+
+## For those trying to locally host cloud-variables and REST APIs...
+
+To obtain the weather and cloud-variable packages, please run `git submodule init`, followed by `git submodule update`. In each `libs/weather` and `libs/cloud-variables` run pxt install after performing the$
+
+To add your own packages to MakeCode, please read: https://makecode.com/packages/getting-started and model your new packages on those I've already implemented. A key step is to add your package to `bundledd$
+
 
 ### Running
 
