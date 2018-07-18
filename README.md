@@ -48,6 +48,7 @@ cd ../
 ```
 git clone https://portal-ua.globallogic.com/gitlab/rohit.ail/pxt-microbit.git
 cd pxt-microbit
+git checkout rest-radio
 ```
 * install the PXT command line (add ``sudo`` for Mac/Linux shells).
 ```
