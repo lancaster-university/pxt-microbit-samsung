@@ -3,8 +3,7 @@
     "dependencies": {
         "core": "file:../core",
         "weather": "file:../weather",
-        "radio": "file:../radio",
-        "cloud-variables": "file:../cloud-variables"
+        "radio": "file:../radio"
     },
     "description": "",
     "files": [
