@@ -72,6 +72,13 @@ namespace samsungiot {
         return;
     }
 
+    //% blockId=samsungiot_setBulbNextColour block="turn bulb| %name |to next colour" weight=58
+    //% shim=samsungiot::setBulbNextColour
+    export function setBulbNextColour(name:string): void{
+        basic.showString("OK", 150);
+        return;
+    }
+
     //% blockId=samsungiot_turnSwitch block="turn switch| %name |to %t" weight=57
     //% shim=samsungiot::turnSwitch
     export function turnSwitch(name:string, state: SwitchState): void {
