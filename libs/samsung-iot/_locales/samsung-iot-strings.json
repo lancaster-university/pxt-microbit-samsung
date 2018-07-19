@@ -7,6 +7,7 @@
   "samsungiot.getSwitchState|block": "get switch state %name",
   "samsungiot.setBulbColour|block": "turn bulb| %name |to colour  %colour",
   "samsungiot.setBulbLevel|block": "turn bulb| %name |to level %level",
+  "samsungiot.setBulbNextTemp|block": "turn bulb| %name |to next colour temperature",
   "samsungiot.setBulbState|block": "turn bulb| %name |to %t",
   "samsungiot.setBulbTemp|block": "turn bulb| %name |to colour temperature %colour",
   "samsungiot.setLightColour|block": "colour %colour",
