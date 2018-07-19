@@ -77,7 +77,7 @@ Note the above command assumes the folder structure of
 
 ## For those trying to locally host cloud-variables and REST APIs...
 
-To obtain the weather and cloud-variable packages, please run `git submodule init`, followed by `git submodule update`. In each `libs/weather` and `libs/cloud-variables` run pxt install after performing the$
+To obtain the weather package, please run `git submodule init`, followed by `git submodule update`.
 
 To add your own packages to MakeCode, please read: https://makecode.com/packages/getting-started and model your new packages on those I've already implemented. A key step is to add your package to `bundledd$
 
