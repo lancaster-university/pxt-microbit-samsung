@@ -75,7 +75,7 @@ Note the above command assumes the folder structure of
 
 # micro:bit target for PXT
 
-## For those trying to locally host cloud-variables and REST APIs...
+## For those trying to test weather REST APIs...
 
 To obtain the weather package, please run `git submodule init`, followed by `git submodule update`.
 
