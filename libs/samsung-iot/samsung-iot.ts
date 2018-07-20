@@ -98,4 +98,10 @@ namespace samsungiot {
     export function getSensorState(name:string): boolean {
         return Math.randomBoolean();
     }
+
+    //% blockId=samsungiot_getSensorTemp block="get sensor temperature| %name" weight=61
+    //% shim=samsungiot::getSensorTemp
+    export function getSensorTemp(name:string): number {
+        return Math.random(25) + 10;
+    }
 }
