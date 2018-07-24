@@ -274,7 +274,7 @@ namespace samsungiot {
     int getSensorTemp(StringData* sensorName)
     {
         init();
-        ManagedString command = "sensorState/";
+        ManagedString command = "sensorTemp/";
         command = command + sensorName;
         ManagedString result = IotService.getSensorTemp(command);
         int temp = stringToNumber(result);
