@@ -8,16 +8,16 @@
 
 
     declare const enum BulbTemp {
-    soft_1 = 0,
-    level_2 = 1,
-    level_3 = 2,
-    level_4 = 3,
-    level_5 = 4,
-    level_6 = 5,
-    level_7 = 6,
-    level_8 = 7,
-    level_9 = 8,
-    daylight_10 = 9,
+    soft_1 = 1,
+    level_2 = 2,
+    level_3 = 3,
+    level_4 = 4,
+    level_5 = 5,
+    level_6 = 6,
+    level_7 = 7,
+    level_8 = 8,
+    level_9 = 9,
+    daylight_10 = 10,
     }
 
 
