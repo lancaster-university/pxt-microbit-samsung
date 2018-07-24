@@ -104,8 +104,8 @@ namespace samsungiot {
         command = command + bulbName;
 
         ManagedString result = IotService.getBulbState(command);
-        uBit.display.scroll(result);
-        if(strcmp(result.toCharArray(), "0") == 0)
+        // uBit.display.scroll(result);
+        if(strcmp(result.toCharArray(), "off") == 0)
         {
             state = false;
         }
