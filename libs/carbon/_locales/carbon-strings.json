@@ -4,6 +4,5 @@
   "carbon.queryCarbonIndex|block": "get carbon index level",
   "carbon.queryCarbonValue|block": "get carbon value",
   "carbon.setCarbonIndexValueType|block": "carbon index level %index",
-  "carbon.setGenerationMixType|block": "generation mix type %mixType",
   "{id:category}Carbon": "Carbon"
 }
