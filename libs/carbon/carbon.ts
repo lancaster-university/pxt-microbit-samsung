@@ -1,12 +1,13 @@
 //% color=#004d00 weight=90 icon="\uf3fd" block="carbon"
 namespace carbon {
 
-
+/*
     //% blockId=carbon_setGenerationMixType block="generation mix type %mixType" weight=75
     //% shim=carbon::setGenerationMixType
     export function setGenerationMixType(mixType:GenerationMixType): number {
         return mixType;
     }
+    */
 
     //% blockId=carbon_setCarbonIndexValueType block="carbon index level %index" weight=75
     //% shim=carbon::setCarbonIndexValueType
