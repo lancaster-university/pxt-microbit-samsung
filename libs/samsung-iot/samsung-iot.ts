@@ -16,6 +16,7 @@ namespace samsungiot {
     //% blockId=samsungiot_setBulbState block="turn bulb| %name |to %t" weight=60
     //% shim=samsungiot::setBulbState
     export function setBulbState(name:string, state: SwitchState): void{
+        basic.showString("OK", 150);
         return;
     }
 
