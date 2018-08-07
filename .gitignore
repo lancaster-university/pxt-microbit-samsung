@@ -31,5 +31,5 @@ crowdinstats.csv
 .vscode/.BROWSE.VC.DB-wal
 package-lock.json
 libs/blocksprj/built/yt/yotta_modules/rest-radio/hub/translations.json
-libs/samsung-iot/_locales/samsung-iot-strings.json
+libs/samsung-iot/_locales/*
 
