@@ -142,10 +142,7 @@ namespace energy {
         }
 
         ManagedString command = "energyLevel/";
-        if(historicData.length() > 0)
-        {
-            command = "historical/energyLevel/";
-        }
+        
         char eType[5];
         memset(eType,0,sizeof(eType));
         sprintf(eType,"%d",(int)t);
@@ -153,13 +150,18 @@ namespace energy {
         command = command + eType;
         command = command + "/";
 
+        command = command + schoolid;
+        command = command + "/";
+
         if(historicData.length() > 0)
         {
-            command = command + historicData;
-            command = command + "/";
+            command = command + "historical/";
         }
 
-        command = command + schoolid;
+         if(historicData.length() > 0)
+        {
+            command = command + historicData;    
+        }
 
         ManagedString reply = EnergyService.getEnergyLevel(command);
         return reply.leakData();
@@ -208,7 +210,7 @@ namespace energy {
     }
 
     //%
-    int querySchoolMonth(EnergyType t, MonthType m, StringData* schoolid)
+    int queryEnergyMonth(EnergyType t, MonthType m, StringData* schoolid)
     {
         char buffer[6];
         memset(buffer,0,sizeof(buffer));

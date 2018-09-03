@@ -32,8 +32,8 @@ namespace energy {
     }
 
     //% blockId=energy_querySchoolEnergyMonth block="get energy level|for %t |for month %m|for my school" weight=86
-    //% shim=energy::querySchoolEnergymonth
-    export function querySchoolEnergymonth(t: EnergyType, m: MonthType): number 
+    //% shim=energy::querySchoolEnergyMonth
+    export function querySchoolEnergyMonth(t: EnergyType, m: MonthType): number 
     {
         return Math.random(900) + 100;
     }
@@ -67,8 +67,8 @@ namespace energy {
     }
 
     //% blockId=energy_queryEnergyMonth block="get energy level|for %t |for month %m |for other school %schoolid" weight=81
-    //% shim=energy::queryEnergymonth
-    export function queryEnergymonth(t: EnergyType, m: MonthType, schoolid:string): number 
+    //% shim=energy::queryEnergyMonth
+    export function queryEnergyMonth(t: EnergyType, m: MonthType, schoolid:string): number 
     {
         return Math.random(900) + 100;
     }
