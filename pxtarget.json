@@ -207,7 +207,7 @@
     "compileService": {
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
-        "githubCorePackage": "https://GL-Kondu-Token:E3-Jyh5ppVsN7-P4B6yX@portal-ua.globallogic.com/gitlab/rohit.ail/microbit.git",
+        "githubCorePackage": "https://github.com/lancaster-university/microbit-ls",
         "gittag": "rest-radio",
         "serviceId": "microbit"
     },
