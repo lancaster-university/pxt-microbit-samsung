@@ -17,7 +17,7 @@
     "public": true,
     "yotta": {
         "dependencies": {
-            "rest-radio": "https://GL-Kondu-Token:E3-Jyh5ppVsN7-P4B6yX@portal-ua.globallogic.com/gitlab/rohit.ail/rest-radio.git#master"
+            "rest-radio": "https://github.com/lancaster-university/rest-radio-ls.git#master"
         },
         "config": {
             "microbit-dal": {
