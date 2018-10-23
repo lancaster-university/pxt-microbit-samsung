@@ -89,8 +89,10 @@ enum EventBusValue {
     MICROBIT_BUTTON_EVT_UP_ = MICROBIT_BUTTON_EVT_UP,
     //% blockIdentity="control.eventValueId"
     MICROBIT_BUTTON_EVT_CLICK_ = MICROBIT_BUTTON_EVT_CLICK,
+#if MICROBIT_RADIO_VERSION == MICROBIT_RADIO_STANDARD
     //% blockIdentity="control.eventValueId"
     MICROBIT_RADIO_EVT_DATAGRAM_ = MICROBIT_RADIO_EVT_DATAGRAM,
+#endif
     //% blockIdentity="control.eventValueId"
     MICROBIT_ACCELEROMETER_EVT_DATA_UPDATE_ = MICROBIT_ACCELEROMETER_EVT_DATA_UPDATE,
     //% blockIdentity="control.eventValueId"

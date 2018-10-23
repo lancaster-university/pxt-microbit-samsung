@@ -10,7 +10,9 @@ namespace pxt {
     {
         if (!radioEnabled)
         {
+#if MICROBIT_RADIO_VERSION == MICROBIT_RADIO_STANDARD
             uBit.radio.setGroup(0);
+#endif
             uBit.radio.enable();
             radioEnabled = true;
         }

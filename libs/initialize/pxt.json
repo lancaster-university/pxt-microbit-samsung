@@ -17,12 +17,12 @@
     "public": true,
     "yotta": {
         "dependencies": {
-            "rest-radio": "https://github.com/lancaster-university/rest-radio-ls.git#master"
+            "rest-radio": "lancaster-university/rest-radio#master"
         },
         "config": {
             "microbit-dal": {
                 "radio": {
-                    "version": "MICROBIT_RADIO_REST"
+                    "version": "MICROBIT_RADIO_PERIDO"
                 },
                 "bluetooth": {
                     "enabled": 0
