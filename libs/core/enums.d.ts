@@ -249,8 +249,6 @@ declare namespace input {
     //% blockIdentity="control.eventValueId"
     MICROBIT_BUTTON_EVT_CLICK = 3,  // MICROBIT_BUTTON_EVT_CLICK
     //% blockIdentity="control.eventValueId"
-    MICROBIT_RADIO_EVT_DATAGRAM = 1,  // MICROBIT_RADIO_EVT_DATAGRAM
-    //% blockIdentity="control.eventValueId"
     MICROBIT_ACCELEROMETER_EVT_DATA_UPDATE = 1,  // MICROBIT_ACCELEROMETER_EVT_DATA_UPDATE
     //% blockIdentity="control.eventValueId"
     MICROBIT_PIN_EVT_RISE = 2,  // MICROBIT_PIN_EVT_RISE

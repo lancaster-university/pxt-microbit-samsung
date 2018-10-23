@@ -1859,6 +1859,7 @@ var ts;
             var numberType = "math_number";
             var stringType = "text";
             var booleanType = "logic_boolean";
+            var variablesGet = "variables_get";
             var ops = {
                 "+": { type: "math_arithmetic", op: "ADD" },
                 "-": { type: "math_arithmetic", op: "MINUS" },
@@ -2185,8 +2186,12 @@ var ts;
                                 case stringType:
                                     write("<shadow type=\"text\"><field name=\"TEXT\"></field></shadow>");
                                     break;
-                                default:
+                                case variablesGet:
                                     write("<shadow type=\"" + n.shadowType + "\"/>");
+                                    break;
+                                default:
+                                    if (blocksInfo.blocksById[n.shadowType])
+                                        write("<shadow type=\"" + n.shadowType + "\"/>");
                             }
                         }
                         emitOutputNode(n.value);

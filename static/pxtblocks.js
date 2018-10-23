@@ -2472,7 +2472,13 @@ var pxt;
             return b ? b.fn : undefined;
         }
         blocks_6.blockSymbol = blockSymbol;
-        function createShadowValue(name, type, v, shadowType) {
+        function isValidShadowBlock(info, shadowType) {
+            return !!shadowType &&
+                (info.blocksById[shadowType] ||
+                    builtinBlocks[shadowType]);
+        }
+        blocks_6.isValidShadowBlock = isValidShadowBlock;
+        function createShadowValue(info, name, type, v, shadowType) {
             if (v && v.slice(0, 1) == "\"")
                 v = JSON.parse(v);
             if (type == "number" && shadowType == "value") {
@@ -2486,6 +2492,10 @@ var pxt;
             var shadow = document.createElement(shadowType == "variables_get" ? "block" : "shadow");
             value.appendChild(shadow);
             var typeInfo = typeDefaults[type];
+            if (shadowType && !isValidShadowBlock(info, shadowType)) {
+                pxt.log("unknown shadow block " + shadowType + ", ignoring");
+                shadowType = undefined;
+            }
             shadow.setAttribute("type", shadowType || typeInfo && typeInfo.block || type);
             if (typeInfo) {
                 var field = document.createElement("field");
@@ -2515,7 +2525,7 @@ var pxt;
             if ((fn.kind == pxtc.SymbolKind.Method || fn.kind == pxtc.SymbolKind.Property)
                 && attrNames["this"]) {
                 var attr = attrNames["this"];
-                block.appendChild(createShadowValue(attr.name, attr.type, attr.shadowValue || attr.name, attr.shadowType || "variables_get"));
+                block.appendChild(createShadowValue(info, attr.name, attr.type, attr.shadowValue || attr.name, attr.shadowType || "variables_get"));
             }
             if (fn.parameters) {
                 fn.parameters.filter(function (pr) { return !!attrNames[pr.name].name &&
@@ -2527,13 +2537,13 @@ var pxt;
                     var shadowValue;
                     var container;
                     if (pr.options && pr.options['min'] && pr.options['max']) {
-                        shadowValue = createShadowValue(attr.name, attr.type, attr.shadowValue, 'math_number_minmax');
+                        shadowValue = createShadowValue(info, attr.name, attr.type, attr.shadowValue, 'math_number_minmax');
                         container = document.createElement('mutation');
                         container.setAttribute('min', pr.options['min'].value);
                         container.setAttribute('max', pr.options['max'].value);
                     }
                     else {
-                        shadowValue = createShadowValue(attr.name, attr.type, attr.shadowValue, attr.shadowType);
+                        shadowValue = createShadowValue(info, attr.name, attr.type, attr.shadowValue, attr.shadowType);
                     }
                     if (pr.options && pr.options['fieldEditorOptions']) {
                         if (!container)
@@ -3619,9 +3629,6 @@ var pxt;
             blocklyInitialized = true;
             goog.provide('Blockly.Blocks.device');
             goog.require('Blockly.Blocks');
-            if (window.PointerEvent) {
-                document.body.style.touchAction = 'none';
-            }
             Blockly.FieldCheckbox.CHECK_CHAR = '■';
             Blockly.BlockSvg.START_HAT = !!pxt.appTarget.appTheme.blockHats;
             blocks_6.initFieldEditors();

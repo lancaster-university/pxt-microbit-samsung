@@ -195,7 +195,7 @@
   "compileService": {
     "yottaTarget": "bbc-microbit-classic-gcc",
     "yottaCorePackage": "microbit",
-    "githubCorePackage": "lancaster-university/microbit",
+    "githubCorePackage": "https://github.com/lancaster-university/microbit-ls",
     "gittag": "rest-radio",
     "serviceId": "microbit",
     "yottaBinary": "pxt-microbit-app-combined.hex"
@@ -227,8 +227,12 @@
       "dependencies": {
         "core": "*",
         "weather": "*",
-        "radio": "*",
-        "cloud-variables": "*"
+        "energy": "*",
+        "carbon": "*",
+        "share": "*",
+        "iss": "*",
+        "initialize": "*",
+        "samsung-iot": "*"
       },
       "description": "",
       "files": [
@@ -249,8 +253,7 @@
     "config": {
       "name": "{0} bit",
       "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*"
       },
       "description": "",
       "files": [
@@ -265,7 +268,7 @@
   },
   "versions": {
     "target": "0.14.37",
-    "pxt": "0.19.7",
+    "pxt": "0.19.16",
     "pxtCrowdinBranch": "v0"
   }
 }
