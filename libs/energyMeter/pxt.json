@@ -1,0 +1,37 @@
+{
+    "name": "energymeter",
+    "description": "The micro:bit Energy Monitoring library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {
+        "core": "file:../core"
+    },
+    "testFiles": [
+        "test.ts"
+    ],
+    "files": [
+        "energyMeter.cpp",
+        "energyMeter.ts",
+        "energyMeterExport.ts",
+        "shims.d.ts",
+        "enums.d.ts",
+        "README.md"
+    ],
+    "public": true,
+    "yotta": {
+        "dependencies": {
+            "rest-radio": "lancaster-university/rest-radio#master"
+        },
+        "config": {
+            "microbit-dal": {
+                "radio": {
+                    "version": "MICROBIT_RADIO_PERIDO"
+                },
+                "bluetooth": {
+                    "enabled": 0
+                }
+            }
+        }
+    },
+    "installedVersion": "file:../energyMeter"
+}

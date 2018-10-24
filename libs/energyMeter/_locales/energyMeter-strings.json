@@ -1,0 +1,7 @@
+{
+  "energymeter.getElectricalPowerStatus|block": "electrical power status",
+  "energymeter.onPowerHandler|block": "on appliance power|%NAME",
+  "energymeter.sendEnergyMeterReading|block": "send power level (watts) of my|%APPLIANCE_TYPE| called|%name to the cloud",
+  "energymeter|block": "Energy Meter",
+  "{id:category}Energymeter": "Energymeter"
+}
