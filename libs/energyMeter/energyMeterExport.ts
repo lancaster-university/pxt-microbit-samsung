@@ -9,7 +9,7 @@ namespace energymeter {
     //% blockId=power_handler block="on appliance power|%NAME" blockGap=8 shim=energymeter::onPowerHandler
     export function onPowerHandler(state: ApplianceState, body: () => void): void
     {
-
+        let x = 0;
     }
 }
 
