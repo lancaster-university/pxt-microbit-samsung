@@ -16,7 +16,8 @@
         "libs/share",
         "libs/iss",
         "libs/initialize",
-        "libs/samsung-iot"
+        "libs/samsung-iot",
+        "libs/energyMeter"
     ],
     "cloud": {
         "workspace": false,
@@ -207,7 +208,7 @@
     "compileService": {
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
-        "githubCorePackage": "https://github.com/lancaster-university/microbit-ls",
+        "githubCorePackage": "lancaster-university/microbit",
         "gittag": "rest-radio",
         "serviceId": "microbit"
     },

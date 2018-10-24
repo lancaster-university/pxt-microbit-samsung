@@ -4,6 +4,7 @@
         "core": "file:../core",
         "weather": "file:../weather",
         "energy": "file:../energy",
+        "energyMeter": "file:../energyMeter",
         "carbon": "file:../carbon",
         "share": "file:../share",
         "iss": "file:../iss",
