@@ -23,4 +23,15 @@ namespace energymeter {
     {
         return 0
     }
+
+    /**
+     * Returns the on/off status of the electrical power.
+     */
+    //% blockId=get_electrical_power_usage block="get energy consumption (watts)" blockGap=8
+    //% weight=99
+    //% shim=energyMeter::getEnergyUsage
+    export function getEnergyUsage() : number
+    {
+        return Math.random(50);
+    }
 }

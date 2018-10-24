@@ -1,4 +1,5 @@
 {
   "energymeter.getElectricalPowerStatus": "Returns the on/off status of the electrical power.",
+  "energymeter.getEnergyUsage": "Returns the on/off status of the electrical power.",
   "energymeter.sendEnergyMeterReading": "Sends the current energy reading to the cloud."
 }

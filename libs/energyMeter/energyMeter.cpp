@@ -23,7 +23,7 @@ namespace energymeter {
         return enableRadio();
     }
 
-    //
+    //%
     void onPowerHandler(ApplianceState state, Action body){
         init();
         registerWithDal(MICROBIT_ID_ENERGY_MONITOR, (state == ApplianceState::on) ? MICROBIT_EVT_ELECTRICAL_POWER_EVT_ON : MICROBIT_EVT_ELECTRICAL_POWER_EVT_OFF, body);
@@ -43,4 +43,10 @@ namespace energymeter {
         return (uBit.energyMonitor.isElectricalPowerOn()) ? 1 : 0;
     }
 
+    //
+    int getEnergyUsage()
+    {
+        init();
+        return (uBit.energyMonitor.getEnergyUsage()) ? 1 : 0;
+    }
 };
