@@ -5,7 +5,7 @@
      * share
      * use
      */
-    //% color=#006f00 weight=100 icon="\uf275" block="energy"
+    //% color=#006f00 weight=100 icon="\uf275" block="School Energy"
 declare namespace energy {
 }
 

@@ -2,30 +2,30 @@
 #include "EnergyService.h"
 
 enum class EnergyType{
-    electricity = 0, 
-    gas = 1, 
+    electricity = 0,
+    gas = 1,
     solar = 2,
 };
 
 enum class HourType{
-    _1_hour_ago = 1, 
-    _2_hours_ago = 2, 
+    _1_hour_ago = 1,
+    _2_hours_ago = 2,
     _3_hours_ago = 3,
     _4_hours_ago = 4,
-    _5_hours_ago = 5, 
+    _5_hours_ago = 5,
     _6_hours_ago = 6,
     _7_hours_ago = 7,
-    _8_hours_ago = 8, 
+    _8_hours_ago = 8,
     _9_hours_ago = 9,
     _10_hours_ago = 10,
-    _11_hours_ago = 11, 
+    _11_hours_ago = 11,
     _12_hours_ago = 12,
     _13_hours_ago = 13,
 };
 
 enum class DayType{
-    yesterday = 1, 
-    _2_days_ago = 2, 
+    yesterday = 1,
+    _2_days_ago = 2,
     _3_days_ago = 3,
     _4_days_ago = 4,
     _5_days_ago = 5,
@@ -35,25 +35,25 @@ enum class DayType{
 };
 
 enum class WeekType{
-    last_week = 1, 
-    _2_weeks_ago = 2, 
+    last_week = 1,
+    _2_weeks_ago = 2,
     _3_weeks_ago = 3,
     _4_weeks_ago = 4,
     _5_weeks_ago = 5,
 };
 
 enum class MonthType{
-    last_month = 1, 
-    _2_months_ago = 2, 
+    last_month = 1,
+    _2_months_ago = 2,
     _3_months_ago = 3,
     _4_months_ago = 4,
-    _5_months_ago = 5, 
+    _5_months_ago = 5,
     _6_months_ago = 6,
     _7_months_ago = 7,
-    _8_months_ago = 8, 
+    _8_months_ago = 8,
     _9_months_ago = 9,
     _10_months_ago = 10,
-    _11_months_ago = 11, 
+    _11_months_ago = 11,
     _12_months_ago = 12,
     _13_months_ago = 13,
 };
@@ -67,7 +67,7 @@ enum class MonthType{
 
 EnergyService EnergyService(uBit.radio);
 
-//% color=#006f00 weight=100 icon="\uf275" block="energy"
+//% color=#006f00 weight=100 icon="\uf275" block="School Energy"
 namespace energy {
 
     int init() {
@@ -142,7 +142,7 @@ namespace energy {
         }
 
         ManagedString command = "energyLevel/";
-        
+
         char eType[5];
         memset(eType,0,sizeof(eType));
         sprintf(eType,"%d",(int)t);
@@ -160,7 +160,7 @@ namespace energy {
 
          if(historicData.length() > 0)
         {
-            command = command + historicData;    
+            command = command + historicData;
         }
 
         ManagedString reply = EnergyService.getEnergyLevel(command);

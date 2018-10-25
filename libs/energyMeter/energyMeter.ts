@@ -1,5 +1,5 @@
 
-//% color=#1a3300 weight=100 icon="\uf1e6" block="Energy Meter"
+//% color=#1a3300 weight=100 icon="\uf1e6" block="Energy Metering"
 namespace energymeter {
 
     /**
@@ -9,8 +9,9 @@ namespace energymeter {
     //% weight=96
     //% blockId=send_meter_reading block="send power level (watts) of my|%APPLIANCE_TYPE| called|%name to the cloud" blockGap=8
     //% shim=energyMeter::sendEnergyMeterReading
-    export function sendEnergyMeterReading(name:string, type:ApplianceType)
+    export function sendEnergyMeterReading(type:ApplianceType, name:string)
     {
+        let p = 0;
     }
 
     /**

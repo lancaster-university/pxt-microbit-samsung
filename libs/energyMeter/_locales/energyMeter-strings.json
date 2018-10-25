@@ -3,6 +3,6 @@
   "energymeter.getEnergyUsage|block": "get energy consumption (watts)",
   "energymeter.onPowerHandler|block": "on appliance power|%NAME",
   "energymeter.sendEnergyMeterReading|block": "send power level (watts) of my|%APPLIANCE_TYPE| called|%name to the cloud",
-  "energymeter|block": "Energy Meter",
+  "energymeter|block": "Energy Metering",
   "{id:category}Energymeter": "Energymeter"
 }

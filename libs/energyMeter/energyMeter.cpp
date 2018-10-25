@@ -26,11 +26,11 @@ namespace energymeter {
     //%
     void onPowerHandler(ApplianceState state, Action body){
         init();
-        registerWithDal(MICROBIT_ID_ENERGY_MONITOR, (state == ApplianceState::on) ? MICROBIT_EVT_ELECTRICAL_POWER_EVT_ON : MICROBIT_EVT_ELECTRICAL_POWER_EVT_OFF, body);
+        registerWithDal(MICROBIT_ID_ENERGY_MONITOR, (state == ApplianceState::on) ? MICROBIT_ENERGY_MONITOR_EVT_POWER_ON : MICROBIT_ENERGY_MONITOR_EVT_POWER_OFF, body);
     }
 
     //
-    void sendEnergyMeterReading(StringData* name, ApplianceType type)
+    void sendEnergyMeterReading(ApplianceType type, StringData* name)
     {
         init();
         energymeterService.sendEnergyLevel(ManagedString(name), uBit.energyMonitor.getEnergyUsage(), (int)type);
