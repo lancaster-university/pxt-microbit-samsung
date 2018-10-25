@@ -195,7 +195,7 @@
   "compileService": {
     "yottaTarget": "bbc-microbit-classic-gcc",
     "yottaCorePackage": "microbit",
-    "githubCorePackage": "https://github.com/lancaster-university/microbit-ls",
+    "githubCorePackage": "lancaster-university/microbit",
     "gittag": "rest-radio",
     "serviceId": "microbit",
     "yottaBinary": "pxt-microbit-app-combined.hex"
@@ -228,6 +228,7 @@
         "core": "*",
         "weather": "*",
         "energy": "*",
+        "energyMeter": "*",
         "carbon": "*",
         "share": "*",
         "iss": "*",
