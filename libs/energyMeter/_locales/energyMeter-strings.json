@@ -1,4 +1,7 @@
 {
+  "ApplianceType.cd_player|block": "cd player",
+  "ApplianceType.smart_board|block": "smart board",
+  "energymeter.calibrateEnergyMeter|block": "calibrate energy meter",
   "energymeter.getElectricalPowerStatus|block": "electrical power status",
   "energymeter.getEnergyUsage|block": "get energy consumption (watts)",
   "energymeter.onPowerHandler|block": "on appliance power|%NAME",

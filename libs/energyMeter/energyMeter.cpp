@@ -11,9 +11,23 @@ enum class ApplianceState
 
 enum class ApplianceType
 {
-    washing_machine,
+    printer,
+    laptop,
+    screen,
+    //% block="smart board"
+    smart_board,
+    computer,
+    projector,
+    television,
+    //% block="cd player"
+    cd_player,
+    microwave,
     kettle,
-    television
+    laminator,
+    heater,
+    lamp,
+    speakers,
+    other
 };
 
 

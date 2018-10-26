@@ -1,5 +1,5 @@
 
-//% color=#1a3300 weight=100 icon="\uf1e6" block="Energy Metering"
+//% color=#1a3300 weight=99 icon="\uf1e6" block="Energy Metering"
 namespace energymeter {
 
     /**
@@ -10,6 +10,17 @@ namespace energymeter {
     //% blockId=send_meter_reading block="send power level (watts) of my|%APPLIANCE_TYPE| called|%name to the cloud" blockGap=8
     //% shim=energyMeter::sendEnergyMeterReading
     export function sendEnergyMeterReading(type:ApplianceType, name:string)
+    {
+        let p = 0;
+    }
+
+    /**
+      * Calibrates
+      */
+    //% help=none
+    //% weight=96
+    //% blockId=calibrate_energy_meter block="calibrate energy meter" blockGap=8
+    export function calibrateEnergyMeter()
     {
         let p = 0;
     }
