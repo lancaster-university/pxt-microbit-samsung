@@ -21,6 +21,18 @@ enum class HourType{
     _11_hours_ago = 11,
     _12_hours_ago = 12,
     _13_hours_ago = 13,
+    _14_hours_ago = 14,
+    _15_hours_ago = 15,
+    _16_hours_ago = 16,
+    _17_hours_ago = 17,
+    _18_hours_ago = 18,
+    _19_hours_ago = 19,
+    _20_hours_ago = 20,
+    _21_hours_ago = 21,
+    _22_hours_ago = 22,
+    _23_hours_ago = 23,
+    _24_hours_ago = 24,
+    _25_hours_ago = 25,
 };
 
 enum class DayType{
