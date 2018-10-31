@@ -61,7 +61,7 @@ namespace energymeter {
     int getEnergyUsage()
     {
         init();
-        return (uBit.energyMonitor.getEnergyUsage()) ? 1 : 0;
+        return uBit.energyMonitor.getEnergyUsage();
     }
 
     //%
