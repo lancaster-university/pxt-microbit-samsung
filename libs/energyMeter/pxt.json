@@ -1,5 +1,5 @@
 {
-    "name": "energymeter",
+    "name": "energyMeter",
     "description": "The micro:bit Energy Monitoring library",
     "version": "0.0.1",
     "license": "MIT",
@@ -10,9 +10,9 @@
         "test.ts"
     ],
     "files": [
-        "energyMeter.cpp",
-        "energyMeter.ts",
-        "energyMeterExport.ts",
+        "energymeter.cpp",
+        "energymeter.ts",
+        "energymeterExport.ts",
         "shims.d.ts",
         "enums.d.ts",
         "README.md"

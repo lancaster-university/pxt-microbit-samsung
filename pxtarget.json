@@ -17,7 +17,7 @@
         "libs/iss",
         "libs/initialize",
         "libs/samsung-iot",
-        "libs/energyMeter"
+        "libs/energymeter"
     ],
     "cloud": {
         "workspace": false,
