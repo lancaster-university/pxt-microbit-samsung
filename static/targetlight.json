@@ -228,7 +228,7 @@
         "core": "*",
         "weather": "*",
         "energy": "*",
-        "energyMeter": "*",
+        "energymeter": "*",
         "carbon": "*",
         "share": "*",
         "iss": "*",
