@@ -6,6 +6,7 @@
         "energy": "file:../energy",
         "energymeter": "file:../energymeter",
         "carbon": "file:../carbon",
+        "radio": "file:../radio",
         "share": "file:../share",
         "iss": "file:../iss",
         "initialize": "file:../initialize",
