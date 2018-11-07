@@ -233,7 +233,6 @@
         "radio": "*",
         "share": "*",
         "iss": "*",
-        "initialize": "*",
         "samsung-iot": "*"
       },
       "description": "",

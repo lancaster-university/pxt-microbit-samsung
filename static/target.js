@@ -3768,7 +3768,6 @@ var pxtTargetBundle = {
         "radio": "*",
         "share": "*",
         "iss": "*",
-        "initialize": "*",
         "samsung-iot": "*"
       },
       "description": "",
@@ -3940,7 +3939,7 @@ var pxtTargetBundle = {
       "README.md": "",
       "main.blocks": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <block type=\"pxt-on-start\"></block>\n  <block type=\"device_forever\"></block>\n</xml>",
       "main.ts": "\n",
-      "pxt.json": "{\n    \"name\": \"{0} block\",\n    \"dependencies\": {\n        \"core\": \"*\",\n        \"weather\": \"*\",\n        \"energy\": \"*\",\n        \"energymeter\": \"*\",\n        \"carbon\": \"*\",\n        \"radio\": \"*\",\n        \"share\": \"*\",\n        \"iss\": \"*\",\n        \"initialize\": \"*\",\n        \"samsung-iot\": \"*\"\n    },\n    \"description\": \"\",\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\"\n    ]\n}"
+      "pxt.json": "{\n    \"name\": \"{0} block\",\n    \"dependencies\": {\n        \"core\": \"*\",\n        \"weather\": \"*\",\n        \"energy\": \"*\",\n        \"energymeter\": \"*\",\n        \"carbon\": \"*\",\n        \"radio\": \"*\",\n        \"share\": \"*\",\n        \"iss\": \"*\",\n        \"samsung-iot\": \"*\"\n    },\n    \"description\": \"\",\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\"\n    ]\n}"
     },
     "tsprj": {
       "README.md": "",

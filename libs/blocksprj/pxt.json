@@ -9,7 +9,6 @@
         "radio": "file:../radio",
         "share": "file:../share",
         "iss": "file:../iss",
-        "initialize": "file:../initialize",
         "samsung-iot": "file:../samsung-iot"
     },
     "description": "",
