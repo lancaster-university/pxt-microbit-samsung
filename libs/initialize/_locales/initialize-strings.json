@@ -1,5 +1,0 @@
-{
-  "initialize.initUnit|block": "init raspberry pi to| %name |as id for %t",
-  "initialize.resetUnit|block": "clear initialisation",
-  "{id:category}Initialize": "Initialize"
-}
