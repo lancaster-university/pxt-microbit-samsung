@@ -3629,6 +3629,9 @@ var pxt;
             blocklyInitialized = true;
             goog.provide('Blockly.Blocks.device');
             goog.require('Blockly.Blocks');
+            if (window.PointerEvent) {
+                document.body.style.touchAction = 'none';
+            }
             Blockly.FieldCheckbox.CHECK_CHAR = '■';
             Blockly.BlockSvg.START_HAT = !!pxt.appTarget.appTheme.blockHats;
             blocks_6.initFieldEditors();

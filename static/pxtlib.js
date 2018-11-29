@@ -936,9 +936,7 @@ var ts;
                     ];
                 _localizeLang = code;
                 _localizeStrings = {};
-                if (live) {
-                    Util.localizeLive = true;
-                }
+                Util.localizeLive = true;
                 function mergeTranslations(tr) {
                     if (!tr)
                         return;
@@ -5447,12 +5445,8 @@ var pxt;
             if (repos.length > 0)
                 return Promise.all(repos.map(function (id) { return repoAsync(id.path, config); }))
                     .then(function (rs) { return rs.filter(function (r) { return r.status != GitRepoStatus.Banned; }); }); // allow deep links to github repos
-            var fetch = function () { return useProxy()
-                ? pxt.U.httpGetJsonAsync((pxt.Cloud.apiRoot + "ghsearch/" + pxt.appTarget.id + "/" + (pxt.appTarget.platformid || pxt.appTarget.id) + "?q=")
-                    + encodeURIComponent(query))
-                : pxt.U.httpGetJsonAsync("https://api.github.com/search/repositories?q="
-                    + encodeURIComponent(query + (" in:name,description,readme \"for PXT/" + (pxt.appTarget.platformid || pxt.appTarget.id) + "\""))); };
-            return fetch()
+            query += " in:name,description,readme \"for PXT/" + (pxt.appTarget.platformid || pxt.appTarget.id) + "\"";
+            return pxt.U.httpGetJsonAsync("https://api.github.com/search/repositories?q=" + encodeURIComponent(query))
                 .then(function (rs) {
                 return rs.items.map(function (item) { return mkRepo(item, config); })
                     .filter(function (r) { return r.status == GitRepoStatus.Approved || (config.allowUnapproved && r.status == GitRepoStatus.Unknown); });
@@ -8429,13 +8423,7 @@ var pxt;
             var rx = "^((https://)?(?:" + domains.join('|') + ")/)?(api/oembed?url=.*%2F([^&]*)&.*?|([a-z0-9-_]+))$";
             var m = new RegExp(rx, 'i').exec(uri.trim());
             var scriptid = m && (!m[1] || domains.indexOf(Util.escapeForRegex(m[1].replace(/https:\/\//, '').replace(/\/$/, '')).toLowerCase()) >= 0) && (m[3] || m[4]) ? (m[3] ? m[3] : m[4]) : null;
-            if (!scriptid)
-                return undefined;
-            if (scriptid[0] == "_" && scriptid.length == 13)
-                return scriptid;
-            if (scriptid.length == 23 && /^[0-9\-]+$/.test(scriptid))
-                return scriptid;
-            return undefined;
+            return scriptid;
         }
         Cloud.parseScriptId = parseScriptId;
     })(Cloud = pxt.Cloud || (pxt.Cloud = {}));
