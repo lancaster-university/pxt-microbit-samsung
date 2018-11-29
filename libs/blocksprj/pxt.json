@@ -4,7 +4,7 @@
         "core": "file:../core",
         "weather": "file:../weather",
         "energy": "file:../energy",
-        "energymeter": "file:../energymeter",
+        "energyMeter": "file:../energyMeter",
         "carbon": "file:../carbon",
         "radio": "file:../radio",
         "share": "file:../share",

@@ -10,9 +10,9 @@
         "test.ts"
     ],
     "files": [
-        "energymeter.cpp",
-        "energymeter.ts",
-        "energymeterExport.ts",
+        "energyMeter.cpp",
+        "energyMeter.ts",
+        "energyMeterExport.ts",
         "shims.d.ts",
         "enums.d.ts",
         "README.md"
