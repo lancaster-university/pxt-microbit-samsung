@@ -9,6 +9,15 @@ namespace share {
         return;
     }
 
+
+    //% blockId=share_shareHistoricalData block="share historical data %data |called %name |namespace %space |units %unit" weight=54
+    //% shim=share::shareHistoricalData
+    export function shareHistoricalData(data:string, name:string, space:string, unit:string): void {
+        //basic.showString("OK");
+        basic.showIcon(IconNames.Yes);
+        return;
+    }
+
     //% blockId=share_fetchData block="fetch shared data called %name |from school %targetSchool" weight=51
     //% shim=share::fetchData
     export function fetchData(name:string, targetSchool:string): string {

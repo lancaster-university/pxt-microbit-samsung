@@ -7,7 +7,6 @@ enum class ShareLevel{
 };
 
 
-
 /**
 * share
 * use
@@ -65,6 +64,17 @@ namespace share {
             level = ShareLevel::school;
         }
         ManagedString result = ShareService.setShareData(ManagedString(data),ManagedString(name),(int)level);
+        uBit.display.scroll(result);
+    }
+
+    //%
+    void shareHistoricalData(StringData* data, StringData* name, StringData* space, StringData* unit)
+    {
+        init();
+
+        //This forces the input to be either a 1 or 0. Anything else becomes a 1 (school)
+        
+        ManagedString result = ShareService.setShareHistoricalData(ManagedString(data),ManagedString(name),ManagedString(space),ManagedString(unit));
         uBit.display.scroll(result);
     }
 
