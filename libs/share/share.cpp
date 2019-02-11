@@ -74,7 +74,7 @@ namespace share {
 
         //This forces the input to be either a 1 or 0. Anything else becomes a 1 (school)
         
-        ManagedString result = ShareService.setShareHistoricalData(ManagedString(data),ManagedString(name),ManagedString(space),ManagedString(unit));
+        ManagedString result = ShareService.setHistoricalData(ManagedString(data),ManagedString(name),ManagedString(space),ManagedString(unit));
         uBit.display.scroll(result);
     }
 
